@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   <!-- Shared settings for both projects. Targets .NET Framework 4.8, which ships with every
        supported Windows 10/11 install, so no runtime download is needed. -->
   <PropertyGroup>
@@ -15,11 +15,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
-  <!-- Building on non-Windows: resx files holding images need preserialized resources. -->
-  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+  <!-- The dotnet CLI (on any OS) can only embed the resx files' images as preserialized resources,
+       which need System.Resources.Extensions.dll at runtime. -->
+  <PropertyGroup>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
-  <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
+  <ItemGroup>
     <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
   </ItemGroup>
 </Project>
