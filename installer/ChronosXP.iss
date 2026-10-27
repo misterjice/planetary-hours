@@ -1,4 +1,4 @@
-; Inno Setup script for ChronosXP.  Build with:
+﻿; Inno Setup script for ChronosXP.  Build with:
 ;   iscc /DArch=x64 /DAppVersion=4.1.x /DSourceDir=<build output> installer\ChronosXP.iss
 ;   iscc /DArch=x86 ...
 #ifndef Arch
@@ -26,8 +26,10 @@ OutputBaseFilename=ChronosXP-{#AppVersion}-{#Arch}-setup
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
-; Program Files needs admin; the app itself keeps all settings per user under HKCU.
-PrivilegesRequired=admin
+; Installs for the current user without admin by default (into %LOCALAPPDATA%\Programs); the wizard
+; offers an all-users install to Program Files, which does prompt for admin.
+PrivilegesRequired=lowest
+PrivilegesRequiredOverridesAllowed=dialog
 CloseApplications=force
 #if Arch == "x64"
 ArchitecturesAllowed=x64compatible

@@ -1,4 +1,4 @@
-name: Build
+﻿name: Build
 
 on:
   push:
@@ -23,9 +23,27 @@ jobs:
         shell: pwsh
         run: |
           foreach ($arch in 'x86', 'x64') {
-            dotnet build ChronosXP/ChronosXP.csproj -c Release -p:PlatformTarget=$arch -o "build/$arch"
+            # Rebuild: an incremental build would reuse the previous architecture's compiled output.
+            dotnet build ChronosXP/ChronosXP.csproj -c Release -t:Rebuild -p:PlatformTarget=$arch -o "build/$arch"
             if ($LASTEXITCODE) { exit $LASTEXITCODE }
           }
+
+      - name: Verify assembly architectures
+        shell: pwsh
+        run: |
+          $want = @{ x86 = 'X86'; x64 = 'Amd64' }
+          $bad = 0
+          foreach ($arch in 'x86', 'x64') {
+            foreach ($f in Get-ChildItem "build/$arch" -Recurse -Include *.exe, *.dll) {
+              $pa = [System.Reflection.AssemblyName]::GetAssemblyName($f.FullName).ProcessorArchitecture
+              $ok = ($pa -eq 'MSIL') -or ($pa -eq $want[$arch])
+              Write-Host "$arch  $pa  $($f.Name)  $(if ($ok) {'ok'} else {'MISMATCH'})"
+              if (-not $ok) { $bad++ }
+            }
+            $exe = [System.Reflection.AssemblyName]::GetAssemblyName("$PWD/build/$arch/ChronosXP.exe").ProcessorArchitecture
+            if ($exe -ne $want[$arch]) { Write-Host "ChronosXP.exe for $arch is $exe"; $bad++ }
+          }
+          if ($bad) { exit 1 }
 
       - name: Install Inno Setup
         shell: pwsh
