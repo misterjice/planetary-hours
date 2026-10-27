@@ -1,6 +1,6 @@
-#region Copyright © 2004-2009 by Robert Misiak
+ï»¿#region Copyright Â© 2004-2009 by Robert Misiak
 // ChronosXP - Core.cs
-// Copyright © 2004-2009 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2004-2009 by Robert Misiak <rmisiak@users.sourceforge.net>
 // 2779 Fort Myer Ave, Henderson, NV 89052 USA
 //
 // This program is free software; you can redistribute it and/or
@@ -52,7 +52,7 @@ namespace ChronosXP
 	/// </summary>
 	public sealed class ChronosXPCore : System.Windows.Forms.Control
 	{
-		public const string Copyright = "Core.cs, Copyright © 2004-2009 by Robert Misiak";
+		public const string Copyright = "Core.cs, Copyright Â© 2004-2009 by Robert Misiak";
 
 		#region Declarations
 		private NotifyIcon trayIcon;
@@ -67,7 +67,7 @@ namespace ChronosXP
 		private LunarPhase.Phase currentPhase;
 		private bool checkUpdate = true, fastCheckUpdate = false;
 
-        public System.Windows.Application Entry;
+        public bool ShutdownRequested = false;
 		public PlanetaryHours pHours;
 		public Calendar FormCalendar;
 		public About FormAbout;
@@ -85,10 +85,8 @@ namespace ChronosXP
 		#endregion
 
 		#region Application Entry and Core constructor
-		public ChronosXPCore(System.Windows.Application entry)
+		public ChronosXPCore()
 		{
-            Entry = entry;
-
 			Application.ApplicationExit += new System.EventHandler (appExit);
 			Application.Idle += new System.EventHandler (appIdle);
 
@@ -114,7 +112,7 @@ namespace ChronosXP
 					case "/dutch":
 						conf.Language = Config.CultureNL;
 						break;
-					case "/español":
+					case "/espaÃ±ol":
 					case "/espanol":
 					case "/spanish":
 						conf.Language = Config.CultureES;
@@ -123,12 +121,12 @@ namespace ChronosXP
 					case "/italian":
 						conf.Language = Config.CultureIT;
 						break;
-					case "/français":
+					case "/franÃ§ais":
 					case "/francais":
 					case "/french":
 						conf.Language = Config.CultureFR;
 						break;
-					case "/português":
+					case "/portuguÃªs":
 					case "/portugues":
 					case "/portuguese":
 						conf.Language = Config.CulturePT;
@@ -328,7 +326,9 @@ namespace ChronosXP
 
         public void Shutdown()
         {
-            Entry.Shutdown();
+            // Program.Main checks this so that a shutdown requested from the constructor
+            // (before Application.Run starts) does not leave a message loop running.
+            ShutdownRequested = true;
             Application.Exit();
         }
 		#endregion
@@ -711,23 +711,13 @@ namespace ChronosXP
 
 		private void notifyBalloon (string title, string text, Int32 flags)
 		{
-			// Based on information found at http://www.thecodeproject.com/csharp/notifyballoon.asp
-			// Has no effect on Windows 98 (and probably other) systems, even though it should.
-			PInvoke.NotifyIconData uNIF = new PInvoke.NotifyIconData();
-			uNIF.hwnd = ((NativeWindow) trayIcon.GetType().GetField ("window", System.Reflection.BindingFlags.Instance |
-				System.Reflection.BindingFlags.NonPublic).GetValue (trayIcon)).Handle;
-			uNIF.uID = (int) trayIcon.GetType().GetField ("id", System.Reflection.BindingFlags.Instance |
-				System.Reflection.BindingFlags.NonPublic).GetValue (trayIcon);
-			uNIF.dwStateMask = 0; uNIF.hIcon = IntPtr.Zero; uNIF.szTip = "";
-			uNIF.uCallbackMessage = IntPtr.Zero; uNIF.dwState = PInvoke.NIS_SHAREDICON;
-			uNIF.uTimeout = 11200; uNIF.dwInfoFlags = flags;
-			uNIF.szInfoTitle = title;
-			uNIF.szInfo = text;
-			uNIF.uFlags = PInvoke.NIF_INFO;
-			uNIF.cbSize = Marshal.SizeOf (uNIF);
+			// NotifyIcon.ShowBalloonTip replaces the old reflection into NotifyIcon's private fields plus an ANSI
+			// Shell_NotifyIconA call, which mangled non-Latin text and depended on framework internals.
+			if (trayIcon == null)
+				return;
 			try
 			{
-				PInvoke.Shell_NotifyIconA (PInvoke.NIM_MODIFY, ref uNIF);
+				trayIcon.ShowBalloonTip (11200, title, text, flags == PInvoke.NIIF_ERROR ? ToolTipIcon.Error : ToolTipIcon.Info);
 			}
 			catch
 			{

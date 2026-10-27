@@ -1,6 +1,6 @@
-#region Copyright © 2003-2005 by Robert Misiak
+ï»¿#region Copyright Â© 2003-2005 by Robert Misiak
 // ChronosXP - Calendar.cs
-// Copyright © 2003-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2003-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
 // 2779 Fort Myer Ave, Henderson, NV 89052 USA
 //
 // This program is free software; you can redistribute it and/or
@@ -62,7 +62,7 @@ namespace ChronosXP
 		private ChronosXP.VisualMonthCalendar visualCalendar;
         private System.Windows.Forms.ColumnHeader columnHeader3;
 		private System.ComponentModel.Container components = null;
-		public const string Copyright = "Calendar.cs, Copyright © 2003-2009 by Robert Misiak";
+		public const string Copyright = "Calendar.cs, Copyright Â© 2003-2009 by Robert Misiak";
 		public bool FormLocalityOpen = false, FormPrintOpen = false;
 		private Config conf;
 		private System.Windows.Forms.Timer sbClock;

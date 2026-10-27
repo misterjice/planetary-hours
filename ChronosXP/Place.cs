@@ -1,6 +1,6 @@
-#region Copyright © 2004-2005 by Robert Misiak
+ï»¿#region Copyright Â© 2004-2005 by Robert Misiak
 // ChronosXP - Place.cs
-// Copyright © 2004-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2004-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -30,7 +30,7 @@ namespace ChronosXP
 	/// </summary>
 	public class Place
 	{
-		public const string Copyright = "Place.cs, Copyright © 2004 by Robert Misiak";
+		public const string Copyright = "Place.cs, Copyright Â© 2004 by Robert Misiak";
 
 		public string Name, Longitude, Latitude, Zone;
 		public double LatitudeAsDouble, LongitudeAsDouble;
@@ -124,7 +124,7 @@ namespace ChronosXP
 		protected double stringToDouble (string str)
 		{
 			int [] ll = parseL (str);
-			double res = (double) ll [0] + (ll[1] / 60);
+			double res = (double) ll [0] + (ll[1] / 60.0);
 			if (quadrant (str) == 'W' || quadrant (str) == 'S')
 				res = -res;
 			return res;

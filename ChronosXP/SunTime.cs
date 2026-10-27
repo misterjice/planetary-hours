@@ -82,11 +82,11 @@ namespace ChronosXP
 				if (where.UseSystemTime)
 				{
 					TimeSpan offts = TimeZone.CurrentTimeZone.GetUtcOffset (when);
-					offset = offts.Hours + (offts.Minutes / 60);
+					offset = offts.Hours + (offts.Minutes / 60.0);
 				}
 				else
 				{
-					offset = where.Offset.Hours + (where.Offset.Minutes / 60);
+					offset = where.Offset.Hours + (where.Offset.Minutes / 60.0);
 					if (where.ZoneWest)
 						offset = -offset;
 				}
@@ -101,11 +101,11 @@ namespace ChronosXP
 				if (where.UseSystemTime)
 				{
 					TimeSpan offts = TimeZone.CurrentTimeZone.GetUtcOffset (when);
-					offset = offts.Hours + (offts.Minutes / 60);
+					offset = offts.Hours + (offts.Minutes / 60.0);
 				}
 				else
 				{
-					offset = where.Offset.Hours + (where.Offset.Minutes / 60);
+					offset = where.Offset.Hours + (where.Offset.Minutes / 60.0);
 					if (where.ZoneWest)
 						offset = -offset;
 				}
@@ -114,7 +114,7 @@ namespace ChronosXP
 				NightLength = (24 - offset) - SetDouble;
 				// Sun rises tomorrow?  Calculate the night length to this sunrise.
 				if (ost.SunRises)
-					NightLength += ost.Sunrise.Hour + (ost.Sunrise.Minute / 60);
+					NightLength += ost.Sunrise.Hour + (ost.Sunrise.Minute / 60.0);
 				Sunrise = new DateTime (when.Year, when.Month, when.Day, 0, 0, 0, 0);
 				Sunset = convertTime (when, where, SetDouble);
 				if (Sunset.Hour < 12) // Messy

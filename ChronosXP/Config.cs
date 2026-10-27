@@ -1,6 +1,6 @@
- #region Copyright © 2003-2009 by Robert Misiak
+ï»¿ #region Copyright Â© 2003-2009 by Robert Misiak
 // ChronosXP - Config.cs
-// Copyright © 2003-2009 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2003-2009 by Robert Misiak <rmisiak@users.sourceforge.net>
 // 2779 Fort Myer Ave, Henderson, NV 89052 USA
 //
 // This program is free software; you can redistribute it and/or
@@ -39,21 +39,12 @@ namespace ChronosXP
 	/// </summary>
 	public sealed class Config
 	{
-		public const string Copyright = "Config.cs, Copyright © 2003-2009 by Robert Misiak";
+		public const string Copyright = "Config.cs, Copyright Â© 2003-2009 by Robert Misiak";
         public const string SoftwareName = "ChronosXP";
-#if X64
-        public const string Platform = "x64";
-        public const string Architecture = "64-bit";
-#endif // X64
-#if X86
-        public const string Platform = "x86";
-        public const string Architecture = "32-bit";
-#endif // X86
-#if IA64
-        public const string Platform = "ia64";
-        public const string Architecture = "64-bit Itanium";
-#endif // IA64
-        public const string CopyrightString = "Copyright © 2009 by Robert Misiak";
+        // Built as AnyCPU, so the platform is determined at runtime rather than per build.
+        public static readonly string Platform = Environment.Is64BitProcess ? "x64" : "x86";
+        public static readonly string Architecture = Environment.Is64BitProcess ? "64-bit" : "32-bit";
+        public const string CopyrightString = "Copyright Â© 2009 by Robert Misiak";
 		public const string Email = "rmisiak@users.sourceforge.net";
 		public const int InternalVersion = 20090412;	// This is used in the process of checking for upgrades
 		public const string Version = "4.1";
@@ -86,6 +77,7 @@ namespace ChronosXP
 		private const string swKey						= /* HKLM, HKCU */ @"SOFTWARE\Robert Misiak";
 		private const string mainKey					= /* HKLM, HKCU */ @"SOFTWARE\Robert Misiak\ChronosXP";
 		private const string placesKey				= /* HKLM, HKCU */ @"SOFTWARE\Robert Misiak\ChronosXP\Places";
+		private const string defaultsKey			= /* HKCU, used when the installer's HKLM key is absent */ @"SOFTWARE\Robert Misiak\ChronosXP\Defaults";
 		private const string zoneKey					= /* HKLM */ @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones";
 		private const string ziKey						= /* HKLM */ @"SYSTEM\CurrentControlSet\Control\TimeZoneInformation";
 		private const string eventsKey				= /* HKU */ @".DEFAULT\AppEvents\EventLabels";
@@ -317,7 +309,7 @@ namespace ChronosXP
                     }
                 }
 
-				RegistryKey configKey = Registry.LocalMachine.OpenSubKey (mainKey);
+				RegistryKey configKey = openDefaultsKey();
                 try
                 {
                     pPlace = configKey.GetValue(placeVal, "Las Vegas, NV").ToString();
@@ -874,10 +866,13 @@ namespace ChronosXP
 		#region ChronosXP.Place related
 		private void loadPlaces()
 		{
-			RegistryKey nkey = Registry.LocalMachine.OpenSubKey (placesKey);
+			RegistryKey dkey = openDefaultsKey();
+			string dname = dkey.Name;
+			RegistryKey nkey = dkey.OpenSubKey ("Places");
+			dkey.Close();
 			if (nkey == null)
 			{
-				Core.ErrorMessage("Unable to load stored locations", new Exception("Cannot open registry key HKLM\\" + placesKey), this);
+				Core.ErrorMessage("Unable to load stored locations", new Exception("Cannot open registry key " + dname + "\\Places"), this);
 				return;
 			}
 			readPlaces (nkey);
@@ -888,6 +883,73 @@ namespace ChronosXP
 				nkey = Registry.CurrentUser.CreateSubKey (placesKey);
 			readPlaces (nkey);
 			nkey.Close();
+		}
+
+		/// <summary>
+		/// Opens the key holding the default settings and built-in places.  The original installer wrote these to
+		/// HKLM\\SOFTWARE\\Robert Misiak\\ChronosXP; when that key is absent (no installer, or a 32-bit install whose key
+		/// is redirected to WOW6432Node), the same defaults are created under HKCU so no installer or admin rights are needed.
+		/// </summary>
+		private RegistryKey openDefaultsKey()
+		{
+			RegistryKey key = Registry.LocalMachine.OpenSubKey (mainKey);
+			if (key == null)
+			{
+				try
+				{
+					RegistryKey hklm32 = RegistryKey.OpenBaseKey (RegistryHive.LocalMachine, RegistryView.Registry32);
+					key = hklm32.OpenSubKey (mainKey);
+					hklm32.Close();
+				}
+				catch { }
+			}
+			if (key != null)
+				return key;
+
+			key = Registry.CurrentUser.CreateSubKey (defaultsKey);
+			if (key.GetValue (placeVal) == null)
+			{
+				key.SetValue (pathVal, Application.StartupPath);
+				key.SetValue (updatesVal, 1, RegistryValueKind.DWord);
+				key.SetValue (captionVal, 2, RegistryValueKind.DWord);
+				key.SetValue (printGlyphVal, 1, RegistryValueKind.DWord);
+				key.SetValue (soundNameVal, "Windows Logon");
+				key.SetValue (gradientVal, 1, RegistryValueKind.DWord);
+				key.SetValue (placeVal, "Las Vegas, NV");
+				key.SetValue (intervalVal, 1, RegistryValueKind.DWord);
+				key.SetValue (soundVal, 1, RegistryValueKind.DWord);
+				key.SetValue (diaryVal, 0, RegistryValueKind.DWord);
+				key.SetValue (secondsVal, 0, RegistryValueKind.DWord);
+				key.SetValue (hebrewVal, 0, RegistryValueKind.DWord);
+				key.SetValue (cultureVal, "*");
+				key.SetValue (trayVal, 1, RegistryValueKind.DWord);
+				key.SetValue (iconSetVal, "Silver");
+				key.SetValue (localityVal, "New York, NY");
+				key.SetValue (notifyVal, 1, RegistryValueKind.DWord);
+				key.SetValue (landscapeVal, 0, RegistryValueKind.DWord);
+				key.SetValue (stickyVal, 1, RegistryValueKind.DWord);
+
+				string[,] places = {
+					{ "Las Vegas, NV", "115W13", "36N11", "+07:00 Pacific Daylight Time - PDT" },
+					{ "Detroit, MI", "83W03", "42N20", "+04:00 Eastern Daylight Time - EDT" },
+					{ "London, England", "0W10", "51N30", "-01:00 British Summer Time - BST" },
+					{ "Tokyo, Japan", "139E46", "35N42", "-09:00 Japan Time - JST" },
+					{ "Los Angeles, CA", "118W15", "34N3", "+07:00 Pacific Daylight Time - PDT" },
+					{ "Sydney, Australia", "151E13", "33S52", "-10:00 Australian Eastern Time - AEST" },
+					{ "Athens, Greece", "23E43", "37N58", "-03:00 Eastern European Summer Time - EEST" },
+					{ "New York, NY", "74W00", "40N43", "+04:00 Eastern Daylight Time - EDT" } };
+				RegistryKey pkey = key.CreateSubKey ("Places");
+				for (int i = 0; i < places.GetLength (0); i++)
+				{
+					RegistryKey nkey = pkey.CreateSubKey (places[i, 0]);
+					nkey.SetValue (pLongitudeVal, places[i, 1]);
+					nkey.SetValue (pLatitudeVal, places[i, 2]);
+					nkey.SetValue (pZoneVal, places[i, 3]);
+					nkey.Close();
+				}
+				pkey.Close();
+			}
+			return key;
 		}
 
 		public bool AddPlace (Place where)

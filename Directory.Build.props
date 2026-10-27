@@ -1,0 +1,25 @@
+<Project>
+  <!-- Shared settings for both projects. Targets .NET Framework 4.8, which ships with every
+       supported Windows 10/11 install, so no runtime download is needed. -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- AssemblyInfo.cs uses wildcard versions (4.1.*), which deterministic builds reject. -->
+    <Deterministic>false</Deterministic>
+    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    <NoWarn>$(NoWarn);CS0168;CS0219;CS0414;CS0618;CS0649;CS0169;CS0162</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+  <!-- Building on non-Windows: resx files holding images need preserialized resources. -->
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
+</Project>

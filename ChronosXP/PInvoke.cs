@@ -1,6 +1,6 @@
-#region Copyright © 2004-2007 by Robert Misiak
+ï»¿#region Copyright Â© 2004-2007 by Robert Misiak
 // ChronosXP - PInvoke.cs
-// Copyright © 2004-2007 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2004-2007 by Robert Misiak <rmisiak@users.sourceforge.net>
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -25,7 +25,7 @@ namespace ChronosXP
 {
 	internal sealed class PInvoke
 	{
-		public const string Copyright = "PInvoke.cs, Copyright © 2004-2007 by Robert Misiak";
+		public const string Copyright = "PInvoke.cs, Copyright Â© 2004-2007 by Robert Misiak";
 
 		#region SetTimeZoneInformation - kernel32.dll
 		[DllImport ("kernel32.dll", SetLastError=true)]

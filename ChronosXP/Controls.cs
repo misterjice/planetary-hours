@@ -1,6 +1,6 @@
-#region Copyright © 2004-2005 by Robert Misiak
+ï»¿#region Copyright Â© 2004-2005 by Robert Misiak
 // ChronosXP - Controls.cs
-// Copyright © 2004-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
+// Copyright Â© 2004-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
 // 2779 Fort Myer Ave, Henderson, NV 89052 USA
 //
 // This program is free software; you can redistribute it and/or
@@ -43,7 +43,7 @@ namespace ChronosXP
 		private System.Windows.Forms.Button buttonRight;
 		private System.Windows.Forms.Label titleBar;
 		private System.Windows.Forms.Button buttonLeft;
-		public const string Copyright = "Controls.cs, Copyright © 2004 by Robert Misiak";
+		public const string Copyright = "Controls.cs, Copyright Â© 2004 by Robert Misiak";
 
 		private System.ComponentModel.Container components = null;
 		private DateTime selectedDate, todayDate;
