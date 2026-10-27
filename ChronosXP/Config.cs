@@ -615,7 +615,7 @@ namespace ChronosXP
                 //    skey = Registry.LocalMachine.OpenSubKey (runKey);
 				if (skey == null)
 				{
-					Core.ErrorMessage ("An internal error has occured", new Exception(@"Failed opening registry key HKCU\" + runKey), this);
+					// Fresh profiles may have no Run key at all; it is created when the user enables startup.
 					pStartup = false;
 				}
 				else
@@ -1442,7 +1442,7 @@ namespace ChronosXP
 			{
 				RegistryKey skey;
                 //if (Config.ModernOS())
-					skey = Registry.CurrentUser.OpenSubKey (runKey, true);
+					skey = Registry.CurrentUser.CreateSubKey (runKey);
                 //else
                 //    skey = Registry.LocalMachine.OpenSubKey (runKey, true);
 				if (skey == null)
