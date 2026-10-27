@@ -251,7 +251,7 @@ namespace ChronosXP
 			}
 
 			#if WINDOWS
-				if (conf.Run == 1) // First time ChronosXP is run?  Prompt user to configure locality
+				if (conf.Run == 1 && !Program.SelfTest) // First time ChronosXP is run?  Prompt user to configure locality
 				{
 					DialogResult res = MessageBox.Show (conf.GetString ("Core.WelcomeText"), conf.GetString ("Core.WelcomeTitle"),
 						MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -860,14 +860,42 @@ namespace ChronosXP
 		/// <summary>
 		/// Generic error message report
 		/// </summary>
+		// ShowDialog rather than Application.Run: Run throws if a message loop is already running, which
+		// turned any error after startup into a second, unhandled exception.
 		public void ErrorMessage (string message, Exception ex, Config conf)
 		{
-			Application.Run (new ErrorReport (message, ex, conf, pHours));
+			new ErrorReport (message, ex, conf, pHours).ShowDialog();
 		}
 
 		public void ErrorMessage (string message, Exception ex)
 		{
-			Application.Run (new ErrorReport (message, ex, conf, pHours));
+			new ErrorReport (message, ex, conf, pHours).ShowDialog();
+		}
+
+		/// <summary>
+		/// Run by Program in /selftest mode once startup has finished: log the computed hours and open every
+		/// window, so that CI catches configuration, calculation and form-construction failures.
+		/// </summary>
+		public void RunSelfTest()
+		{
+			Program.Log ("Platform=" + Config.Platform + " DefaultPlace=" + conf.DefaultPlace + " DefaultLocality=" + conf.DefaultLocality
+				+ " Places=" + conf.PlaceNum);
+			PlanetaryHours ph = new PlanetaryHours (conf);
+			Program.Log ("Sunrise=" + ph.RS.Sunrise.ToString ("yyyy-MM-dd HH:mm") + " Sunset=" + ph.RS.Sunset.ToString ("yyyy-MM-dd HH:mm")
+				+ " Day=" + ph.Day + " CurrentHour=" + ph.CurrentHour());
+			for (int i = 0; i < 24; i++)
+				Program.Log ("Hour " + (i + 1) + "=" + ph.Hours[i].Hour + " " + ph.Hours[i].StartTime.ToString ("yyyy-MM-dd HH:mm"));
+			if (ph.CurrentHour() == (PlanetaryHours.Planet) (-1))
+				Program.Fail ("Current planetary hour could not be determined", "");
+
+			ShowCalendar();
+			ShowPhases();
+			ShowAbout();
+			ShowProperties();
+			ShowLicense();
+			Application.DoEvents();
+			Program.Log ("Opened calendar, phases, about, properties and license windows");
+			Program.Pass();
 		}
 		#endregion
 

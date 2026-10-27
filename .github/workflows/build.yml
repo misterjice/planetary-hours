@@ -31,17 +31,21 @@ jobs:
       - name: Verify assembly architectures
         shell: pwsh
         run: |
-          $want = @{ x86 = 'X86'; x64 = 'Amd64' }
+          # Reads the PE/CLR headers: an assembly is AnyCPU (ILOnly, no Requires32Bit, I386 machine),
+          # x86-only (Requires32Bit), or x64-only (Amd64 machine).
           $bad = 0
           foreach ($arch in 'x86', 'x64') {
             foreach ($f in Get-ChildItem "build/$arch" -Recurse -Include *.exe, *.dll) {
-              $pa = [System.Reflection.AssemblyName]::GetAssemblyName($f.FullName).ProcessorArchitecture
-              $ok = ($pa -eq 'MSIL') -or ($pa -eq $want[$arch])
-              Write-Host "$arch  $pa  $($f.Name)  $(if ($ok) {'ok'} else {'MISMATCH'})"
+              $stream = [IO.File]::OpenRead($f.FullName)
+              $pe = [System.Reflection.PortableExecutable.PEReader]::new($stream)
+              $machine = $pe.PEHeaders.CoffHeader.Machine.ToString()
+              $flags = $pe.PEHeaders.CorHeader.Flags.ToString()
+              $pe.Dispose(); $stream.Dispose()
+              $kind = if ($machine -eq 'Amd64') { 'x64' } elseif ($flags -match 'Requires32Bit') { 'x86' } else { 'AnyCPU' }
+              $ok = ($kind -eq 'AnyCPU' -and $f.Name -ne 'ChronosXP.exe') -or ($kind -eq $arch)
+              Write-Host "$arch  $kind  $($f.Name)  $(if ($ok) {'ok'} else {'MISMATCH'})"
               if (-not $ok) { $bad++ }
             }
-            $exe = [System.Reflection.AssemblyName]::GetAssemblyName("$PWD/build/$arch/ChronosXP.exe").ProcessorArchitecture
-            if ($exe -ne $want[$arch]) { Write-Host "ChronosXP.exe for $arch is $exe"; $bad++ }
           }
           if ($bad) { exit 1 }
 
@@ -69,6 +73,21 @@ jobs:
         with:
           name: ChronosXP-${{ env.APP_VERSION }}
           path: installer/output/
+
+      - name: Smoke test installed app (x86 and x64)
+        shell: pwsh
+        run: |
+          foreach ($arch in 'x86', 'x64') {
+            ./ci/smoke-test.ps1 -Arch $arch -Installer (Get-ChildItem "installer/output/*-$arch-setup.exe").FullName
+          }
+
+      - name: Upload smoke-test screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-screenshots
+          path: smoke-screenshots/
+          if-no-files-found: ignore
 
       - name: Publish release
         shell: pwsh

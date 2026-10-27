@@ -1,4 +1,4 @@
-#region Copyright  2004-2005 by Robert Misiak
+﻿#region Copyright  2004-2005 by Robert Misiak
 // ChronosXP - ErrorReport.cs
 // Copyright  2004-2005 by Robert Misiak <rmisiak@users.sourceforge.net>
 // 2779 Fort Myer Ave, Henderson, NV 89052 USA
@@ -128,6 +128,9 @@ namespace ChronosXP
 				textBox.Text += "pHours=" + pHours.ToString() + "\r\n";
 			textBox.Text += "DateTime.Now=" + DateTime.Now.ToString() + "\r\n" +
 				"DateTime.UtcNow=" + DateTime.UtcNow.ToString() + "\r\n";
+
+			if (Program.SelfTest)
+				Program.Fail (labelError.Text, textBox.Text);
 		}
 
 		/// <summary>
