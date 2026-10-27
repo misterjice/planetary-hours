@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B47050CC-25F4-4B11-9954-4375A6A59E8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChronosXP</RootNamespace>
+    <AssemblyName>ChronosXP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;X64 WINDOWS DEBUG BETA</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;X64 WINDOWS</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;X86 WINDOWS DEBUG BETA</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;X86 WINDOWS</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Controls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ErrorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LunarPhase.cs" />
+    <Compile Include="NotifyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PInvoke.cs" />
+    <Compile Include="Place.cs" />
+    <Compile Include="PlanetaryHours.cs" />
+    <Compile Include="PrintHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintHours.pt.Designer.cs" />
+    <Compile Include="PropertiesBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ShowRichTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SunTime.cs" />
+    <Compile Include="Upgrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UxTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.el.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.es.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.fr.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.he.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.hu.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.it.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.nl.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.pt.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls.resx">
+      <DependentUpon>Controls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorReport.resx">
+      <DependentUpon>ErrorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.el.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.es.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.fr.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.hu.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.it.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.nl.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.pt.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locality.resx">
+      <DependentUpon>Locality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyWindow.resx">
+      <DependentUpon>NotifyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.el.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.es.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.fr.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.hu.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.it.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.nl.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.pt.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phases.resx">
+      <DependentUpon>Phases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.el.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.es.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.fr.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.hu.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.it.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.nl.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.pt.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintHours.resx">
+      <DependentUpon>PrintHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.el.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.es.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.fr.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.hu.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.it.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.nl.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.pt.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesBox.resx">
+      <DependentUpon>PropertiesBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRichTextBox.resx">
+      <DependentUpon>ShowRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.el.resx" />
+    <EmbeddedResource Include="Strings.en.resx" />
+    <EmbeddedResource Include="Strings.es.resx" />
+    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.he.resx" />
+    <EmbeddedResource Include="Strings.hu.resx" />
+    <EmbeddedResource Include="Strings.it.resx" />
+    <EmbeddedResource Include="Strings.nl.resx" />
+    <EmbeddedResource Include="Strings.pt.resx" />
+    <EmbeddedResource Include="Strings.resx" />
+    <EmbeddedResource Include="Upgrade.el.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.es.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.fr.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.hu.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.it.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.nl.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.pt.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upgrade.resx">
+      <DependentUpon>Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UxTheme.resx">
+      <DependentUpon>UxTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChronosXPfx\ChronosXPfx.csproj">
+      <Project>{E6F659D6-197C-4A96-9A72-D28750087341}</Project>
+      <Name>ChronosXPfx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+<Project name="ChronosXPfx" standardNamespace="ChronosXP" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\fx.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Black.Jupiter.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Mars.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Mercury.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Moon.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Saturn.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Sun.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Black.Venus.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Exclamation.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Jupiter.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Mars.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Mercury.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Moon.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Saturn.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Jupiter.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Mars.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Mercury.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Moon.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Saturn.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Sun.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Venus.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Sun.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Venus.gif" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Jupiter.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Mars.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Mercury.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Moon.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Saturn.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Sun.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Silver.Tray.Saturn.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Multi.Venus.ico" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Makefile.pl" subtype="Code" buildaction="Nothing" dependson="" data="" />
+  </Contents>
+  <References />
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="v1.1.4322" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\bin\Debug\" assembly="ChronosXPfx" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="v1.1.4322" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="DEBUG;TRACE" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\bin\Debug\" assembly="ChronosXPfx" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="Standard" warninglevel="4" nowarn="" includedebuginformation="False" optimize="True" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="Library" definesymbols="TRACE;USEKEY" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\bin\Release\" assembly="ChronosXPfx" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

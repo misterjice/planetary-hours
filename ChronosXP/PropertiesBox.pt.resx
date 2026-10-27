@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="linkLabelMoon.Text" xml:space="preserve">
+    <value>Lua</value>
+  </data>
+  <data name="radioButtonSysSound.Text" xml:space="preserve">
+    <value>Som do sistema Windows</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>* Periodicamente conectar-se ao servidor de internet de ChronosXP para verificar se há novas versões disponíveis.  Nenhuma informação pessoal será enviada ao servidor, e nada será descarregado sem seu consentimento prévio</value>
+  </data>
+  <data name="xpLabelColor.Text" xml:space="preserve">
+    <value>Clique no nome do planeta para visualizar a janela de aviso correspondente</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>No Calendário de Horas Planetárias:</value>
+  </data>
+  <data name="radioButtonHourNumber.Text" xml:space="preserve">
+    <value>O número da hora atual (ex., 11a Hora da Noite)</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propriedades - ChronosXP</value>
+  </data>
+  <data name="linkLabelMars.Text" xml:space="preserve">
+    <value>Marte</value>
+  </data>
+  <data name="tabPageStartup.Text" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="radioButtonShortTime.Text" xml:space="preserve">
+    <value>Arredondar a hora ao minuto mais próximo</value>
+  </data>
+  <data name="radioButtonItalian.Text" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="radioButtonLongTime.Text" xml:space="preserve">
+    <value>Mostrar a hora completa com os segundos</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Iniciar ChronosXP automaticamente com o Windows</value>
+  </data>
+  <data name="linkLabelLanguage.Text" xml:space="preserve">
+    <value>Você quer que a próxima versão de ChronosXP esteja no seu idioma?</value>
+  </data>
+  <data name="radioButtonEnglish.Text" xml:space="preserve">
+    <value>English (Inglês)</value>
+  </data>
+  <data name="radioButtonNorth.Text" xml:space="preserve">
+    <value>Norte</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Meu idioma preferido é:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Graus</value>
+  </data>
+  <data name="linkLabelSaturn.Text" xml:space="preserve">
+    <value>Saturno</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Graus</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Verificar se a hora planetária mudou:</value>
+  </data>
+  <data name="tabPagePrecision.Text" xml:space="preserve">
+    <value>Precisão</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Minutos</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Minutos</value>
+  </data>
+  <data name="linkLabelVenus.Text" xml:space="preserve">
+    <value>Vênus</value>
+  </data>
+  <data name="xpLabelInPHC.Text" xml:space="preserve">
+    <value>No Calendário de Horas Planetárias, exibir:</value>
+  </data>
+  <data name="radioButtonDutch.Text" xml:space="preserve">
+    <value>Nederlands (Holandês)</value>
+  </data>
+  <data name="linkLabelSun.Text" xml:space="preserve">
+    <value>Sol</value>
+  </data>
+  <data name="radioButtonWest.Text" xml:space="preserve">
+    <value>Oeste</value>
+  </data>
+  <data name="xpGroupBoxFont.Text" xml:space="preserve">
+    <value>Fonte</value>
+  </data>
+  <data name="linkLabelJupiter.Text" xml:space="preserve">
+    <value>Júpiter</value>
+  </data>
+  <data name="tabPageNotify.Text" xml:space="preserve">
+    <value>Avisos</value>
+  </data>
+  <data name="linkLabelMercury.Text" xml:space="preserve">
+    <value>Mercúrio</value>
+  </data>
+  <data name="xpGroupBoxColor.Text" xml:space="preserve">
+    <value>Cores do fundo</value>
+  </data>
+  <data name="tabPageSounds.Text" xml:space="preserve">
+    <value>Sons</value>
+  </data>
+  <data name="buttonChooseFile.Text" xml:space="preserve">
+    <value>Escolher Arquivo</value>
+  </data>
+  <data name="radioButtonEast.Text" xml:space="preserve">
+    <value>Leste</value>
+  </data>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Avisos</value>
+  </data>
+  <data name="radioButton3DSilver.Text" xml:space="preserve">
+    <value>Prata</value>
+  </data>
+  <data name="radioButtonSouth.Text" xml:space="preserve">
+    <value>Sul</value>
+  </data>
+  <data name="radioButtonSpanish.Text" xml:space="preserve">
+    <value>Español (Espanhol)</value>
+  </data>
+  <data name="radioButtonWaveFile.Text" xml:space="preserve">
+    <value>Ouvir um arquivo wave</value>
+  </data>
+  <data name="tabPageLocation.Text" xml:space="preserve">
+    <value>Minha cidade</value>
+  </data>
+  <data name="buttonPreviewSound.Text" xml:space="preserve">
+    <value>Ouvir</value>
+  </data>
+  <data name="checkBoxUpdate.Text" xml:space="preserve">
+    <value>Avisar se há novas versões de ChronosXP disponíveis *</value>
+  </data>
+  <data name="radioButtonMinute.Text" xml:space="preserve">
+    <value>A cada minuto (recomendado para computadores mais lentos)</value>
+  </data>
+  <data name="xpLabelIconSet.Text" xml:space="preserve">
+    <value>A cor preferida para o símbolo do planeta:</value>
+  </data>
+  <data name="radioButtonBlack.Text" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+  <data name="radioButtonFrench.Text" xml:space="preserve">
+    <value>Français (Francês)</value>
+  </data>
+  <data name="buttonFonts.Text" xml:space="preserve">
+    <value>Escolha a fonte</value>
+  </data>
+  <data name="tabPageDisplay.Text" xml:space="preserve">
+    <value>Exibir</value>
+  </data>
+  <data name="radioButtonSecond.Text" xml:space="preserve">
+    <value>A cada segundo</value>
+  </data>
+  <data name="xpGroupBoxTimeZone.Text" xml:space="preserve">
+    <value>Fuso Horário</value>
+  </data>
+  <data name="radioButtonMulti.Text" xml:space="preserve">
+    <value>Colorido</value>
+  </data>
+  <data name="tabPageLanguage.Text" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="radioButtonHouseMoment.Text" xml:space="preserve">
+    <value>A casa do momento</value>
+  </data>
+  <data name="buttonApply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="linkLabelAtlas.Text" xml:space="preserve">
+    <value>Procurar a latitude e longitude online (Astrodienst Atlas Query)</value>
+  </data>
+  <data name="checkBoxSound.Text" xml:space="preserve">
+    <value>Som em cada mudança de hora planetária</value>
+  </data>
+  <data name="checkBoxTray.Text" xml:space="preserve">
+    <value>Executar ChronosXP desde a barra de tarefas</value>
+  </data>
+  <data name="radioButtonPHCPhase.Text" xml:space="preserve">
+    <value>A fase atual da lua</value>
+  </data>
+  <data name="radioButtonPortuguese.Text" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="checkBoxNotify.Text" xml:space="preserve">
+    <value>Avisar quando a hora planetária muda</value>
+  </data>
+  <data name="checkBoxHebrew.Text" xml:space="preserve">
+    <value>Permitir Hebreu (suporte parcial do idioma)</value>
+  </data>
+  <data name="radioButtonDefault.Text" xml:space="preserve">
+    <value>PADRÃO</value>
+  </data>
+  <data name="radioButtonHebrew.Text" xml:space="preserve">
+    <value>Hebreu</value>
+  </data>
+  <data name="radioButtonKabbalistic.Text" xml:space="preserve">
+    <value>Cabalístico</value>
+  </data>
+</root>

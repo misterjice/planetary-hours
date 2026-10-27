@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Name" xml:space="preserve">
+    <value>Tulajdonságok</value>
+  </data>
+  <data name="$This.Text" xml:space="preserve">
+    <value>Tulajdonságok - ChronosXP</value>
+  </data>
+  <data name="buttonApply.Text" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="buttonChooseFile.Text" xml:space="preserve">
+    <value>Válassz fájlt</value>
+  </data>
+  <data name="buttonFonts.Text" xml:space="preserve">
+    <value>Betûtípus választása</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonPreviewSound.Text" xml:space="preserve">
+    <value>Hang meghallgatása</value>
+  </data>
+  <data name="checkBoxNotify.Text" xml:space="preserve">
+    <value>Értesíts, ha a planétaóra vált</value>
+  </data>
+  <data name="checkBoxSound.Text" xml:space="preserve">
+    <value>Hang lejátszása planétaóra váltásakor</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>A ChronosXP automatikus indítása a Windows indulásakor</value>
+  </data>
+  <data name="checkBoxTray.Text" xml:space="preserve">
+    <value>A ChronosXP futtatása a rendszertálcáról</value>
+  </data>
+  <data name="checkBoxUpdate.Text" xml:space="preserve">
+    <value>Értesíts, ha a ChronosXP új verziója elérhetõ *</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Földrajzi szélesség (É/D)</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Település</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>* Rendszeresen csatlakozik a ChronosXP Internet-szerverhez új verziót keresve.  Semmiféle személyes
+informmációt _nem_ küld a szervernek, valamint semmit sem tölt le az elõzetes megkérdezésed nélkül.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>A Planétaóra-naptárban:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Nyelvbeállítás:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Planétaóra-váltás ellenõrzése:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>fok</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>fok</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>perc</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>perc</value>
+  </data>
+  <data name="linkLabelAtlas.Text" xml:space="preserve">
+    <value>A földrajzi koordináták keresése a weben</value>
+  </data>
+  <data name="linkLabelJupiter.Text" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="linkLabelMars.Text" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="linkLabelMercury.Tex" xml:space="preserve">
+    <value>Merkúr</value>
+  </data>
+  <data name="linkLabelMoon.Text" xml:space="preserve">
+    <value>Hold</value>
+  </data>
+  <data name="linkLabelSaturn.Text" xml:space="preserve">
+    <value>Szaturn</value>
+  </data>
+  <data name="linkLabelSun.Text" xml:space="preserve">
+    <value>Nap</value>
+  </data>
+  <data name="linkLabelVenus.Text" xml:space="preserve">
+    <value>Vénusz</value>
+  </data>
+  <data name="radioButton3DSilver.Text" xml:space="preserve">
+    <value>Ezüst</value>
+  </data>
+  <data name="radioButtonBlack.Text" xml:space="preserve">
+    <value>Fekete</value>
+  </data>
+  <data name="radioButtonDutch.Text" xml:space="preserve">
+    <value>Holland</value>
+  </data>
+  <data name="radioButtonEast.Text" xml:space="preserve">
+    <value>Kelet</value>
+  </data>
+  <data name="radioButtonEnglish.Text" xml:space="preserve">
+    <value>Angol</value>
+  </data>
+  <data name="radioButtonFrench.Text" xml:space="preserve">
+    <value>Francia</value>
+  </data>
+  <data name="radioButtonHourNumber.Text" xml:space="preserve">
+    <value>Az aktuális óra (pl., az éjszaka 11. órája)</value>
+  </data>
+  <data name="radioButtonHouseMoment.Text" xml:space="preserve">
+    <value>a pillanat háza</value>
+  </data>
+  <data name="radioButtonHungarian.Text" xml:space="preserve">
+    <value>Magyar</value>
+  </data>
+  <data name="radioButtonItalian.Text" xml:space="preserve">
+    <value>Olasz</value>
+  </data>
+  <data name="radioButtonLongTime.Text" xml:space="preserve">
+    <value>másodperc-pontos idõpontok mutatása</value>
+  </data>
+  <data name="radioButtonMinute.Text" xml:space="preserve">
+    <value>percenként</value>
+  </data>
+  <data name="radioButtonMulti.Text" xml:space="preserve">
+    <value>Színes</value>
+  </data>
+  <data name="radioButtonNorth.Text" xml:space="preserve">
+    <value>Észak</value>
+  </data>
+  <data name="radioButtonPHCPhase.Text" xml:space="preserve">
+    <value>Aktuális Holdfázis</value>
+  </data>
+  <data name="radioButtonSecond.Text" xml:space="preserve">
+    <value>másodpercenként</value>
+  </data>
+  <data name="radioButtonShortTime.Text" xml:space="preserve">
+    <value>az idõpontok kerekítése percekre</value>
+  </data>
+  <data name="radioButtonSouth.Text" xml:space="preserve">
+    <value>Dél</value>
+  </data>
+  <data name="radioButtonSpanish.Text" xml:space="preserve">
+    <value>Spanyol</value>
+  </data>
+  <data name="radioButtonSysSound.Text" xml:space="preserve">
+    <value>E Windows rendszerhang lej tsz sa</value>
+  </data>
+  <data name="radioButtonWaveFile.Text" xml:space="preserve">
+    <value>Wave f jl lej tsz sa</value>
+  </data>
+  <data name="radioButtonWest.Text" xml:space="preserve">
+    <value>Nyugat</value>
+  </data>
+  <data name="tabPageDisplay.Text" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="tabPageLanguage.Text" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
+  <data name="tabPageLocation.Text" xml:space="preserve">
+    <value>Helyszín</value>
+  </data>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Értesítés</value>
+  </data>
+  <data name="tabPageNotify.Text" xml:space="preserve">
+    <value>Értesítés</value>
+  </data>
+  <data name="tabPagePrecision.Text" xml:space="preserve">
+    <value>Pontosság</value>
+  </data>
+  <data name="tabPageSounds.Text" xml:space="preserve">
+    <value>Hangok</value>
+  </data>
+  <data name="tabPageStartup.Text" xml:space="preserve">
+    <value>Indítópult</value>
+  </data>
+  <data name="xpGroupBox2.Text" xml:space="preserve">
+    <value>Helyszín</value>
+  </data>
+  <data name="xpGroupBoxColor.Text" xml:space="preserve">
+    <value>Háttérszinek</value>
+  </data>
+  <data name="xpGroupBoxFont.Text" xml:space="preserve">
+    <value>Betûtípus</value>
+  </data>
+  <data name="xpGroupBoxLongitude.Text" xml:space="preserve">
+    <value>Földrajzi hosszúság (K/NY)</value>
+  </data>
+  <data name="xpGroupBoxTimeZone.Text" xml:space="preserve">
+    <value>Idõzóna</value>
+  </data>
+  <data name="xpLabelColor.Text" xml:space="preserve">
+    <value>Kattints egy planéta nevére, hogy megtekinthesd az értesítõablak elõnézetét!</value>
+  </data>
+  <data name="xpLabelIconSet.Text" xml:space="preserve">
+    <value>választott jelgyûjtemény:</value>
+  </data>
+  <data name="xpLabelInPHC.Text" xml:space="preserve">
+    <value>A Planétaóra-naptárban megjelenítendõ:</value>
+  </data>
+  <data name="xpGroupBoxLatitude.Text" xml:space="preserve">
+    <value>Földrajzi szélesség (É/D)</value>
+  </data>
+  <data name="checkBoxHebrew.Text" xml:space="preserve">
+    <value>Héber engedélyezése (részleges nyelv-támogatottság)</value>
+  </data>
+  <data name="radioButtonDefault.Text" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="radioButtonHebrew.Text" xml:space="preserve">
+    <value>Héber</value>
+  </data>
+</root>

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Sunrise" xml:space="preserve">
+    <value>Zonsopkomst</value>
+  </data>
+  <data name="Properties.OnlyWaveTitle" xml:space="preserve">
+    <value>Onjuist bestandstype</value>
+  </data>
+  <data name="ContextMenu.About" xml:space="preserve">
+    <value>Over ChronosXP</value>
+  </data>
+  <data name="Calendar.labelSunrise" xml:space="preserve">
+    <value>Dag begint om {0} </value>
+  </data>
+  <data name="Core.BackgroundTitle" xml:space="preserve">
+    <value>ChronosXP draait op de achtergrond!</value>
+  </data>
+  <data name="Date.InvalidDate" xml:space="preserve">
+    <value>De ingevoerde datum is ongeldig.</value>
+  </data>
+  <data name="Locality.labelInfo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Print.PageOf" xml:space="preserve">
+    <value>Pagina {0} van {1}</value>
+  </data>
+  <data name="LunarPhase.Full" xml:space="preserve">
+    <value>Volle Maan</value>
+  </data>
+  <data name="ContextMenu.License" xml:space="preserve">
+    <value>Licentie Overeenkomst</value>
+  </data>
+  <data name="Planet.Jupiter" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="PlanetPrefix.Zon" xml:space="preserve">
+    <value>de </value>
+  </data>
+  <data name="Calendar.NightHours" xml:space="preserve">
+    <value>Nacht Uren</value>
+  </data>
+  <data name="Abbreviation.9" xml:space="preserve">
+    <value>9e</value>
+  </data>
+  <data name="Abbreviation.8" xml:space="preserve">
+    <value>8e</value>
+  </data>
+  <data name="Abbreviation.7" xml:space="preserve">
+    <value>7e</value>
+  </data>
+  <data name="Abbreviation.6" xml:space="preserve">
+    <value>6e</value>
+  </data>
+  <data name="Abbreviation.5" xml:space="preserve">
+    <value>5e</value>
+  </data>
+  <data name="Abbreviation.4" xml:space="preserve">
+    <value>4e</value>
+  </data>
+  <data name="Abbreviation.3" xml:space="preserve">
+    <value>3e</value>
+  </data>
+  <data name="Abbreviation.2" xml:space="preserve">
+    <value>2e</value>
+  </data>
+  <data name="Abbreviation.1" xml:space="preserve">
+    <value>1e</value>
+  </data>
+  <data name="ContextMenu.ReadMe" xml:space="preserve">
+    <value>Lees mij</value>
+  </data>
+  <data name="Core.NoConfigTitle" xml:space="preserve">
+    <value>Geen lengte -en breedtegraad ingesteld</value>
+  </data>
+  <data name="Calendar.MorningTwilight" xml:space="preserve">
+    <value>Dag ({0}°) begint om {1}</value>
+  </data>
+  <data name="Print.PrintPreview" xml:space="preserve">
+    <value>Afdrukvoorbeeld - ChronosXP</value>
+  </data>
+  <data name="HourOf" xml:space="preserve">
+    <value>Uur van {0}</value>
+  </data>
+  <data name="Core.BetaExpiredBalloonTitle" xml:space="preserve">
+    <value>Deze beta versie van ChronosXP is verlopen</value>
+  </data>
+  <data name="ContextMenu.LunarPhases" xml:space="preserve">
+    <value>Maanstanden</value>
+  </data>
+  <data name="PlanetPrefix.Maan" xml:space="preserve">
+    <value>de </value>
+  </data>
+  <data name="Calendar.EveningTwilight" xml:space="preserve">
+    <value>Nacht ({0}°) begint om {1}</value>
+  </data>
+  <data name="Sunset" xml:space="preserve">
+    <value>Zonsondergang</value>
+  </data>
+  <data name="LunarPhase.WaxingCrescent" xml:space="preserve">
+    <value>Wassende Sikkel</value>
+  </data>
+  <data name="Abbreviation.12" xml:space="preserve">
+    <value>12e</value>
+  </data>
+  <data name="Abbreviation.10" xml:space="preserve">
+    <value>10e</value>
+  </data>
+  <data name="Abbreviation.11" xml:space="preserve">
+    <value>11e</value>
+  </data>
+  <data name="Properties.NoZoneInfo" xml:space="preserve">
+    <value>* Gebruik het Windows Systeemvak om deze instelling te wijzigen</value>
+  </data>
+  <data name="Core.WelcomeText" xml:space="preserve">
+    <value>Het blijkt dat dit de eerste keer is dat u ChronosXP gebruikt of u bent net verhuist. Voor een nauwkeurig resultaat hebben we de correcte lengte -en breedtegraad van uw woonplaats nodig. Wilt u dit nu instellen?</value>
+  </data>
+  <data name="LunarPhase.WaxingGibbous" xml:space="preserve">
+    <value>Wassende Bol</value>
+  </data>
+  <data name="Core.BetaExpiredWebPage" xml:space="preserve">
+    <value>Deze beta versie van ChronosXP is verlopen. Wilt u de ChronosXP homepage nu openen om de laatste versie op te halen?</value>
+  </data>
+  <data name="LunarPhase.LastQuarter" xml:space="preserve">
+    <value>Laatste Kwartier</value>
+  </data>
+  <data name="Calendar.Exit" xml:space="preserve">
+    <value>Afsluiten</value>
+  </data>
+  <data name="Upgrade.Version" xml:space="preserve">
+    <value>Versie</value>
+  </data>
+  <data name="Read Me.Title" xml:space="preserve">
+    <value>Lees mij - ChronosXP</value>
+  </data>
+  <data name="ContextMenu.HomePage" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="Properties.SAChanges" xml:space="preserve">
+    <value>ChronosXP dient opnieuw te worden opgestart om de wijzigingen door te voeren. Druk Ja om opnieuw te starten.</value>
+  </data>
+  <data name="Planet.Saturn" xml:space="preserve">
+    <value>Saturnus</value>
+  </data>
+  <data name="Planet.Sun" xml:space="preserve">
+    <value>Zon</value>
+  </data>
+  <data name="Button.Cancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="Properties.Standalone" xml:space="preserve">
+    <value>ChronosXP moet opnieuw gestart worden om in standalone mode te werken.  Druk Ja om te herstarten.</value>
+  </data>
+  <data name="Button.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Planet.Venus" xml:space="preserve">
+    <value>Venus</value>
+  </data>
+  <data name="Calendar.MCToolTip" xml:space="preserve">
+    <value>Klik op een datum om planeet uren en tijden voor die dag te zien</value>
+  </data>
+  <data name="LunarPhase.WaningGibbous" xml:space="preserve">
+    <value>Afnemende Bol</value>
+  </data>
+  <data name="Core.BetaExpiredBalloonText" xml:space="preserve">
+    <value>Ga naar {0} om de laatste versie van ChronosXP te downloaden.</value>
+  </data>
+  <data name="Calendar.Title" xml:space="preserve">
+    <value>Planeet Uren Kalender - {0}</value>
+  </data>
+  <data name="NHourOfDayNight" xml:space="preserve">
+    <value>{0} Uur van de {1}</value>
+  </data>
+  <data name="Core.BackgroundText" xml:space="preserve">
+    <value>Dubbel klik dit icoon voor de Planeet Uren Kalender of om u locatie in te stellen.</value>
+  </data>
+  <data name="ContextMenu.Properties" xml:space="preserve">
+    <value>Eigenschappen</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Dag</value>
+  </data>
+  <data name="DayOf" xml:space="preserve">
+    <value>Dag van {0}</value>
+  </data>
+  <data name="Night" xml:space="preserve">
+    <value>Nacht </value>
+  </data>
+  <data name="PlanetaryHours" xml:space="preserve">
+    <value>Planeet Uren</value>
+  </data>
+  <data name="Calendar.labelCTime" xml:space="preserve">
+    <value>Huidige tijd in {0}: {1}</value>
+  </data>
+  <data name="Locality.SelectZone" xml:space="preserve">
+    <value>Selecteer een tijdzone uit de lijst.</value>
+  </data>
+  <data name="Planet.Mercury" xml:space="preserve">
+    <value>Mercurius</value>
+  </data>
+  <data name="ContextMenu.Calendar" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Planet.Mars" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="Planet.Moon" xml:space="preserve">
+    <value>Maan</value>
+  </data>
+  <data name="Properties.Example" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="Core.NoConfigText" xml:space="preserve">
+    <value>U kunt de lengte -en breedtegraad op elk moment veranderen door op de link instellingen in het kalender venster te klikken of door het selecteren van Instellingen in het menu van de ChronosXP in de systeembalk.</value>
+  </data>
+  <data name="LunarPhase.FirstQuarter" xml:space="preserve">
+    <value>Eerste Kwartier</value>
+  </data>
+  <data name="Properties.Tray" xml:space="preserve">
+    <value>ChronosXP moet opnieuw gestart worden om in systeemvak mode te werken.  Druk Ja om te herstarten.</value>
+  </data>
+  <data name="ContextMenu.Exit" xml:space="preserve">
+    <value>Afsluiten</value>
+  </data>
+  <data name="Calendar.DayHours" xml:space="preserve">
+    <value>Dag Uren</value>
+  </data>
+  <data name="Calendar.HouseOfMoment" xml:space="preserve">
+    <value>Zon in {0} huis</value>
+  </data>
+  <data name="Calendar.Preview" xml:space="preserve">
+    <value>Beoordeling</value>
+  </data>
+  <data name="Core.WelcomeTitle" xml:space="preserve">
+    <value>Welkom bij ChronosXP</value>
+  </data>
+  <data name="Calendar.TitleToolTip" xml:space="preserve">
+    <value>Klik hier om de maand of het jaar te selecteren</value>
+  </data>
+  <data name="Print.NoPrinters" xml:space="preserve">
+    <value>Er zijn geen printers geïnstalleerd.</value>
+  </data>
+  <data name="License.Title" xml:space="preserve">
+    <value>Licentie Overeenkomst - ChronosXP</value>
+  </data>
+  <data name="LunarPhase.New" xml:space="preserve">
+    <value>Nieuwe Maan</value>
+  </data>
+  <data name="Core.InvalidArgument" xml:space="preserve">
+    <value>Ongeldig argument</value>
+  </data>
+  <data name="Properties.OnlyWaveText" xml:space="preserve">
+    <value>Alleen wave bestanden (*.wav) worden ondersteund</value>
+  </data>
+  <data name="LunarPhase.WaningCrescent" xml:space="preserve">
+    <value>Afnemende Sikkel</value>
+  </data>
+  <data name="Calendar.labelSunset" xml:space="preserve">
+    <value>Nacht begint om {0} </value>
+  </data>
+</root>

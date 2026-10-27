@@ -1,0 +1,1 @@
+To enable Hebrew mode in ChronosXP, create a file called "Hebrew.txt" in ChronosXP's directory (usually "C:\Program Files\ChronosXP\" or "C:\Program Files (x86)\ChronosXP\"), then restart the program.  The file can be blank.

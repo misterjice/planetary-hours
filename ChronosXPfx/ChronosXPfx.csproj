@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6F659D6-197C-4A96-9A72-D28750087341}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChronosXPfx</RootNamespace>
+    <AssemblyName>ChronosXPfx</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fx.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Black.Jupiter.ico" />
+    <EmbeddedResource Include="Black.Mars.ico" />
+    <EmbeddedResource Include="Black.Mercury.ico" />
+    <EmbeddedResource Include="Black.Moon.ico" />
+    <EmbeddedResource Include="Black.Saturn.ico" />
+    <EmbeddedResource Include="Black.Sun.ico" />
+    <EmbeddedResource Include="Black.Venus.ico" />
+    <EmbeddedResource Include="Exclamation.ico" />
+    <EmbeddedResource Include="Default.Jupiter.gif" />
+    <EmbeddedResource Include="Default.Mars.gif" />
+    <EmbeddedResource Include="Default.Mercury.gif" />
+    <EmbeddedResource Include="Default.Moon.gif" />
+    <EmbeddedResource Include="Multi.Jupiter.ico" />
+    <EmbeddedResource Include="Multi.Mars.ico" />
+    <EmbeddedResource Include="Multi.Mercury.ico" />
+    <EmbeddedResource Include="Multi.Moon.ico" />
+    <EmbeddedResource Include="Multi.Saturn.ico" />
+    <EmbeddedResource Include="Multi.Sun.ico" />
+    <EmbeddedResource Include="Multi.Venus.ico" />
+    <EmbeddedResource Include="Default.Saturn.gif" />
+    <EmbeddedResource Include="Silver.Jupiter.ico" />
+    <EmbeddedResource Include="Silver.Mars.ico" />
+    <EmbeddedResource Include="Silver.Mercury.ico" />
+    <EmbeddedResource Include="Silver.Moon.ico" />
+    <EmbeddedResource Include="Silver.Saturn.ico" />
+    <EmbeddedResource Include="Silver.Sun.ico" />
+    <EmbeddedResource Include="Silver.Tray.Saturn.ico" />
+    <EmbeddedResource Include="Silver.Venus.ico" />
+    <EmbeddedResource Include="Default.Sun.gif" />
+    <EmbeddedResource Include="Default.Venus.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Kabbalistic.Jupiter.ico" />
+    <EmbeddedResource Include="Kabbalistic.Mars.ico" />
+    <EmbeddedResource Include="Kabbalistic.Mercury.ico" />
+    <EmbeddedResource Include="Kabbalistic.Moon.ico" />
+    <EmbeddedResource Include="Kabbalistic.Saturn.ico" />
+    <EmbeddedResource Include="Kabbalistic.Sun.ico" />
+    <EmbeddedResource Include="Kabbalistic.Venus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Kabbalistic.Saturn.gif" />
+    <EmbeddedResource Include="Kabbalistic.Mars.gif" />
+    <EmbeddedResource Include="Kabbalistic.Jupiter.gif" />
+    <EmbeddedResource Include="Kabbalistic.Sun.gif" />
+    <EmbeddedResource Include="Kabbalistic.Venus.gif" />
+    <EmbeddedResource Include="Kabbalistic.Mercury.gif" />
+    <EmbeddedResource Include="Kabbalistic.Moon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Hebrew.Mercury.ico" />
+    <EmbeddedResource Include="Hebrew.Jupiter.gif" />
+    <EmbeddedResource Include="Hebrew.Jupiter.ico" />
+    <EmbeddedResource Include="Hebrew.Mars.gif" />
+    <EmbeddedResource Include="Hebrew.Mars.ico" />
+    <EmbeddedResource Include="Hebrew.Mercury.gif" />
+    <EmbeddedResource Include="Hebrew.Moon.gif" />
+    <EmbeddedResource Include="Hebrew.Moon.ico" />
+    <EmbeddedResource Include="Hebrew.Saturn.gif" />
+    <EmbeddedResource Include="Hebrew.Saturn.ico" />
+    <EmbeddedResource Include="Hebrew.Sun.gif" />
+    <EmbeddedResource Include="Hebrew.Sun.ico" />
+    <EmbeddedResource Include="Hebrew.Venus.gif" />
+    <EmbeddedResource Include="Hebrew.Venus.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

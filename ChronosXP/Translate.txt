@@ -1,0 +1,489 @@
+These are the strings that need to be translated to add support for a new language
+Edit this file, and type your language's translation immediately below the English text.
+Ignore any text on lines that begin with "//", but leave them in the document.  These lines
+are used by the programmer when integrating the translation of your language.
+
+
+Example:
+
+  // Print.xpGroupBox3.Text  <--- ignore this line, but don't remove it from the file.
+  "Dates"                    <--- this is the original English text (leave it as it is)
+  Datum                      <--- add your translation here.
+
+Another example:
+
+  <The name of your language as it is written in your language>  <--- instead of literal text to
+                                                                      translate, follow instructions
+  Nederlands                                                     <--- add text here.
+
+Final example:
+
+  // Strings.Print.PageOf                    <--- again, ignore lines that begin with "//"
+  "Page __ of __" (such as "Page 1 of 12")   <--- only translate "Page __ of __", the rest is FYI.
+  Pagina ___ van ___                         <--- add your translation.
+
+
+If you need clarification of the meanings of anything here, feel free to email me.  When you are
+finished with the translation, save the file and email it to me.
+
+Additionally, you will need to translate the Read Me file; however, contact the author prior to doing
+this, as there may be additional changes.
+
+- Robert Misiak <rmisiak@users.sourceforge.net>
+
+Updated: 2-28-2005
+-------------------------------------------------------------------------------------------------------
+BEGIN HERE
+
+// Strings.Planet.*
+"Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn"
+
+// Strings.PlanetPrefix.*
+<In English, most people say "the Moon" and "the Sun", but other planets are referred to only by their
+ name, like "Mercury" and "Venus";  If this is true of your language I need to know as well.>
+
+// Strings.HourOf, DayOf
+"Day of _____", "Hour of _____"
+
+// Strings.Core.WelcomeTitle
+"Welcome to ChronosXP"
+
+// Strings.Core.Text
+"This appears to be the first time you are using ChronosXP, or you may have just
+igraded.  For accurate results, we need your city's correct longitude and latitude.
+Would you like to set this up now?"
+
+// Strings.Core.NoConfigTitle
+"Not configuring longitude and latitude"
+
+// Strings.Core.NoConfigText
+"You can set up your longitude and latitude any time by clicking on the settings link
+in the calendar window, or by selecting Properties from the context menu of the ChronosXP tray icon."
+
+// Upgrade.Text
+"Upgrade Available"
+
+// Upgrade.label1.Text
+"A new version of ChronosXP is available.  Would you like to download it now?"
+
+// Strings.Core.BackgroundTitle
+"ChronosXP is running in the background!"
+
+// Strings.Core.BackgroundText
+"Double click this icon for the Planetary Hours Calendar or to set your locality."
+
+// Strings.Core.BetaExpiredWebPage
+"This beta version of ChronosXP has expired.  Would you like to open the ChronosXP
+home page now to get the latest version?"
+
+// Strings.Core.BetaExpiredBalloonTitle
+"This beta version of ChronosXP has expired"
+
+// Strings.Core.BetaExpiredBalloonText
+"Please go to http://chronosxp.sourceforge.net to download the latest version."
+
+// Strings.Calendar.Title
+"Planetary Hours Calendar"
+
+// Strings.ContextMenu.Properties, Properties.Title
+"Properties"
+
+// Strings.ContextMenu.About
+"About"
+
+// Strings.ContextMenu.License, Strings.License.Title
+"License Agreement"
+
+// Strings.ContextMenu.ReadMe
+"Read Me"
+
+// Strings.ContextMenu.HomePage
+"ChronosXP Home Page"
+
+// Strings.ContextMenu.Exit
+"Exit"
+
+// Strings.Calendar.labelSunrise
+"Day starts at ______"   (a time is filled in here)
+
+// Strings.Calendar.labelSunset
+"Night starts at ______"
+
+// Calendar.linkLabelLocality.Text
+"View planetary hours for a different location..."
+
+// Calendar.linkLabelProperties.Text
+"Change settings..."
+
+// Calendar.linkLabelAbout.Text
+"About ChronosXP..."
+
+// Calendar.linkLabelHours.Text
+"Learn about the planetary hours..."
+
+// Locality.SelectZone
+"Please select a time zone from the list"
+
+// Locality.labelInfo.Text
+"In this window, you can change the locality used in the Planetary Hours Calendar.  These changes are temporary,
+and the next time you open the Calendar the default location will be used.  To permanently change your locality,
+click the "Change settings" link in the Calendar window.  Changes made in the Locality window have no effect on
+the glyph icon displayed in the system tray"
+
+// Locality.groupBoxCity.Text, Properties.groupBox3.Text
+"City or Town"
+
+// Locality.groupBoxTZ.Text, Properties.xpGroupBoxTimeZone.Text
+"Time Zone"
+
+// Locality.groupBoxLatitude.Text, Properties.groupBox2.Text
+"Latitude"
+
+// Locality.groupBoxLongitude.Text, Properties.xpGroupBoxLongitude.Text
+"Longitude"
+
+// Locality.*, Properties.*
+"Degrees," "Minutes", "North," "South," "East," "West"
+
+// Locality.linkLabelAtlas.Text, Properties.linkLabelAtlas.Text
+"Find latitude and longitude online"
+
+// Strings.Properties.OnlyWaveTitle
+"Incorrect file type"
+
+// Strings.Properties.OnlyWaveText
+"Only wave files (*.wav) are supported"
+
+// Properties.checkBoxSound.Text
+"Play a sound when the planetary hour changes"
+
+// Properties.radioButtonSysSound.Text
+"Play this windows system sound"
+
+// Properties.buttonPreviewSound.Text
+"Preview sound"
+
+// Properties.radioButtonWaveFile.Text
+"Play a wave file"
+
+// Properties.checkBoxStartup.Text
+"Automatically run ChronosXP when Windows starts"
+
+// Properties.checkBoxUpdate.Text
+"Notify me when new versions of ChronosXP become available *"
+
+// Properties.label10.Text
+"* Periodically connects to the ChronosXP internet server to check for newer versions.  No personal
+information is sent to the server, and nothing is downloaded without asking you first"
+
+// Properties.tabPageDisplay.Text
+"Display"
+
+// Properties.xpLabelInPHC.Text
+"In the Planetary Hours Calendar, display:"
+
+// Properties.radioButtonHourNumber.Text
+"The current hour's number (i.e., 11th Hour of Night)"
+
+// Properties.radioButtonHouseMoment.Text
+"the house of the moment"
+
+// Properties.radioButtonPHCPhase.Text
+"The current lunar phase"
+
+// Properties.xpLabelIconSet.Text
+"my preferred glyph icon set is:"
+
+// Properties.radioButton3DSilver.Text
+"Silver (Windows XP, 2003 only)"
+
+// Properties.radioButtonBlack.Text
+"Black"
+
+// Properties.radioButtonMulti.Text
+"Multi-colored"
+
+// Properties.label3.Text
+"My preferred language is:"
+ 
+// Properties.tabPageLocation.Text
+"My Location"
+ 
+// Properties.buttonChooseFile.Text
+"Choose File"
+ 
+// Properties.tabPagePrecision.Text
+"Precision"
+
+// Propeties.label4.Text
+"Check to see if the planetary hour has changed:"
+
+// Properties.radioButtonSecond.Text
+"Every second"
+
+// Properties.radioButtonMinute.Text
+"Every minute (recommended for slower computers)"
+
+// Properties.label11.Text
+"In the Planetary Hours Calendar:"
+
+// Properties.radioButtonShortTime.Text
+"Show times to the nearest minute"
+
+// Properties.radioButtonLongTime.Text
+"Display full time including seconds"
+
+// Properties.checkBoxNotify.Text
+"Notify me when the planetary hour changes"
+
+// Properties.xpGroupBoxColor.Text
+"Background Colors"
+
+// Properties.xpGroupBoxFont.Text
+"Font"
+
+// Properties.buttonFonts.Text
+"Choose Font"
+
+// Properties.tabPageLanguage.Text
+"Language"
+ 
+// Properties.radioButtonEnglish.Text
+"English"
+
+// Properties.radioButtonDutch.Text
+"Dutch"  [the language spoken in the Netherlands; not German/Deutsch]
+
+// Properties.radioButtonSpanish.Text
+"Spanish"
+
+// Properties.radioButtonItalian.Text
+"Italian"
+
+// Properties.radioButtonFrench.Text
+"French"
+
+<The name of your language as it is written in your language>
+
+// Properties.tabPageNotification.Text
+"Notification"
+
+// Properties.tabPageSounds.Text
+"Sounds"
+
+// Properties.tabPageStartup.Text
+"Startup"
+
+// Print.xpGroupBox2.Text
+"Location"
+
+// buttonApply.Text
+"Apply"
+
+// buttonOK.Text
+"OK"
+
+// buttonCancel.Text
+"Cancel"
+
+// Upgrade.buttonYes.Text
+"Yes"
+ 
+// Upgrade.buttonNo.Text
+"No"
+ 
+// Calendar.columnHeader1.Text, Calendar.columnHeader3.Text
+"Hour Name"
+
+// Calendar.columnHeader2.Text, Calendar.columnHeader4.Text
+"Start Time"
+ 
+// Strings.Calendar.DayHours
+"Day Hours"
+ 
+// Strings.Calendar.NightHours
+"Night Hours"
+ 
+// Strings.Button.Close (deprecated?), calendar.buttonClose.Text
+"Close"
+ 
+// Calendar.statusBarDay.ToolTipText
+"The current planetary day at the selected location"
+
+// Calendar.statusBarHour.ToolTipText
+"The current planetary hour at the selected location"
+
+// Calendar.statusBarLocation.ToolTipText
+"The currently selected location"
+
+// Strings.Calendar.MCToolTip
+"Click on a date to view planetary hours and times for that day"
+
+// Upgrade.checkBoxCheckUpdates.Text
+"Periodically check for updates"  ("updates" in the context of upgrades)
+ 
+// Strings.Core.InvalidArgument
+"Invalid argument"  ("argument" in the context of a command-line argument passed to the program)
+ 
+// NHourOfDayNight
+"____ Hour of Day"  [such as 1st hour, 2nd hour, etc - to be filed in dynamically]
+
+"____ Hour of Night"
+
+// Abbreviation.*
+<In English, First is abbreviated as "1st", Second is "2nd", Tenth is "10th", etc.  I need to know
+ these abbreviations in your language, for the numbers 1 through 12.>
+
+// Upgrade.Version
+"Version"
+
+// Strings.Properties.Example
+"Example"
+
+// Properties.checkBoxTray.Text
+"Run ChronosXP from the system tray"
+
+// Strings.Properties.Standalone
+"ChronosXP needs to be restarted to run in standalone mode.  Press OK to restart."
+
+// Strings.Properties.Tray
+"ChronosXP needs to be restarted to run in system tray mode.  Press OK to restart."
+
+// Calendar.linkLabelPrint.Text
+"Print planetary hours..."
+
+// Strings.Properties.SAChanges
+"ChronosXP needs to be restarted for changes to take effect.  Press OK to restart."
+
+// Strings.Calendar.TitleToolTip
+"Click here to select the month or year"
+
+// Strings.Calendar.Preview
+"Preview"
+
+
+// Strings.ContextMenu.Calendar
+"Open"  (as in Open the program)
+
+// Strings.Print.PageOf
+"Page __ of __" (printing on pages, such as "Page 1 of 12")
+
+// Properties.tabPageNotify.Text
+"Notification"
+
+// Properties.xpLabelColor.Text
+"Click on a planet's name for a notify window preview"
+
+// Strings.Rise
+"Rise"
+
+// Strings.Set
+"Set"
+
+// Strings.Sunrise
+"Sunrise"
+
+// Strings.Sunset
+"Sunset"
+
+// ** Installation **
+"Standalone Mode"
+
+// Strings.Properties.NoZoneInfo
+"Use the Windows Control Panel to change this setting"
+
+// Strings.Print.NoPrinters
+"No printers are installed"
+
+// Print.Text
+"Print"
+
+// Print.xpGroupBox3.Text
+"Dates"
+
+// Print.xpGroupBoxTR.Text
+"Time Range"
+
+// Print.xpGroupBox1.Text
+"Printing Options"
+
+// Print.xpLabel1.Text
+"Start Date"
+
+// Print.xpLabelAux.Text
+"Ending Date"
+
+// Print.xpCheckBoxMultiple.Text
+"Print multiple planetary days"
+
+// Print.xpCheckBoxDiary.Text
+"Print planetary hour diary areas"
+
+// Print.xpCheckBoxGlyphs.Text
+"Print glyphs for each hour"
+
+// Print.radioButtonPrintAll.Text
+"Print all planetary hours"
+
+// Print.radioButtonPrintSelective.Text
+"Print hours that begin between ____ and _____"  [NOTE: times will be filled in the blanks]
+
+// Print.buttonPageSetup.Text
+"Page Setup"
+
+// Print.buttonPrintPreview.Text
+"Print Preview"
+
+// Phases.Text
+"Lunar Phases"
+
+// Phases.labelDate.Text
+"Select a date for which to view the current lunar phases"
+
+// Calendar.linkLabelPhase.Text
+"View phases of the Moon..."
+
+// Phases.columnHeader1.Text
+"Phase Name"
+
+// Strings.LunarPhase.*
+"New Moon"
+
+"Waxing Crescent"
+
+"First Quarter"
+
+"Waxing Gibbous"
+
+"Full Moon"
+
+"Waning Gibbous"
+
+"Last Quarter"
+
+"Waning Crescent"
+
+// Strings.Calendar.HouseOfMoment
+"Sun in the ___ house" [such as "Sun in the 1st house" - it will be filled in dynamically]
+
+// ReadMe.Disclaimer
+"Disclaimer:  Below is an unofficial <name of your language> translation of the GNU General Public
+License.  It is not the official license; it is only intended to help <name of your language> speakers 
+better understand the GNU GPL.  The official GNU General Public License can be found at the end of
+this document."
+
+// Strings.ReadMe.Title
+"Read Me"
+
+// About.*
+"About"
+
+"Credits"
+ 
+"Postcards"
+ 
+"This program is subject to the terms of the GNU General Public License"
+ 
+"If you like ChronosXP, send a postcard from your part of the world to:"
+ 
+"Include your postal address and we will send a postcard back to you!"

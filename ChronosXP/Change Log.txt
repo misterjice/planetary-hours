@@ -1,0 +1,443 @@
+Beta 3.5 RC 2 (7-2-2008)
+- Added Hungarian Language Support
+- Fixed localization support
+- Re-Added x86 support
+- Further polishing/upkeep
+
+Beta 3.5 RC 1 (6-26-2008)
+[ This is the most work that I've done on ChronosXP in years!!! ]
+- 64-bit support
+- .NET Framework 3.5 support
+- Use of a MS Setup/Deployment project in favor of Inno Setup
+
+Version 3.4 (6-18-2007)
+[ I've been busy and it's been over two years since I've done anything.  This is a minor release mainly to support
+  .NET 2.0 and to improve the interface with Windows Vista. ]
+- Use of .NET Framework v2.0
+- Interface correction for Windows Vista
+
+Version 3.3.3
+- Portuguese translation by CartaNatal (http://www.cartanatal.com)
+- Other stuff I probably forgot (I forgot to update the change log with this version.  Oops!)
+
+Version 3.3.2 (2-20-2005)
+- Included French Read Me file (Read Me.fr.rtf); License translations for all supported languages (License.<lang>.rtf);
+  updated setup project accordingly.
+- Phases.cs: More sensical (for the end-user) DateTimePicker -> LunarPhase interpretation.  Accomplished with
+  DateTimePicker.Value (date) at 11:59PM, then ToUniversalTime(), in determining the current phase.
+- Core.threadCheckUpdate will now only Sleep() if !BETA.
+- Compiling for Release now emits pdb files; which are in turn included with the new binary distribution.
+- Added French corrections from Christophe Bussien (Properties resources).
+- Reorganized Upgrade form, providing ample room for longer translations, and longer "Version" text.
+- Created Makefile.pl, fx Library\Makefile.pl, to build from the command-line (as the extension implies, you still need Perl
+  to compile, as well as the .NETfx).
+- The new Makefile determines whether or not a resource is localized by matching "[^\.][a-z][a-z]\.resources$", meaning
+	5-character resources are no longer supported (example: "en-US" as opposed to the more generic and preferred "en"). As such,
+	MakeResources.pl updated to only match two-character localized resources.
+- Config.UseGradient always returns true; a better solution (and a goal on the TODO list) would be to remove all references
+  to this deprecated configuration variable.
+- Various anonymous ErrorReport's indicate an exception at Config.appExit when RunFromTrayNow==false.  Previously, a
+  call to the native method UnregisterHotKey() would have thrown an exception (RegisterHotKey() only performed if RunFromTrayNow),
+  however this cannot be the source, since it is in a try{} with a blank catch{}.  So appExit has been reorganized, with only
+  thread Abort() commands outside of the try{}.  Additionally, RunFromTrayNow==true is checked before calling UnregisterHotKey().
+- Item priorities in To Do.txt recategorized hopefully more realistically.  (Mono compatibility is desired but not neccessary enough
+  to have been high-priority; high-priority tasks now only related to functionality and efficiency.
+- Core.RefreshHours: DateTime.UtcNow (as opposed to .Now) in ErrorReport.
+- Phases.refreshList: while PhaseNum == -1, lp = LunarPhase(SearchTime.AddDays(-1)).
+- Inno Setup creates "License Agreement" start menu icon in appropriate localized language; same for Read Me if a translation
+  is present.
+- Strings.*.resources: Updated License.Title, and (when available ) Read Me.Title, to contain appropriate text.
+- Generic.PlanetaryHours.cs added to distribution; it's a modified version of PlanetaryHours.cs which requires no
+  Config variable and does not make use of localized resources.  It is intended for inclusion in other programs.
+- Core.cs: /nocheckupdate flag.
+- Core.cs: NotifyIcon ToolTip fields separated by newlines, checked for >64 chars, and trimmed if neccesary.
+- Additional integrity checking in Config constructor; More info included in ErrorReport.
+- Setup project: "Caption" now defaults to 2 (Lunar Phase).
+- Added ZIP code "plus four" to all mailing addresses.
+- Core.ShowPhases zero-arg overload uses DateTime.Now instead of DateTime.UtcNow, as it should have.
+
+Version 3.3.1 (1-24-2005)
+- Old style assembly version was: major.minor.build.0; migrating to major.minor.rev.build (to accomodate a version such as 3.3.1.)
+  UpdateBuild.pl modified accordingly.
+- Corrected Spanish translation; "de la noche" as opposed to "del noche"
+- Integrated "Français" translation.
+- Cleaned up Translation.txt: removed deprecated strings, added key names and directions.
+- The new Lunar Phase stuff forgot to convert UT to LT.  Fixed!
+- Day of week displayed in Phases.cs.
+- Phase.cs: UserPaint, DoubleBuffer, AllPaintingInWmPaint + OnPaintBackground override, painted with LinearGradientBrush.
+
+Version 3.3 (1-22-2005)
+- Integrated Italian translation from Gjiada.
+- Split some English strings (namely PlanetPrefix.*, Abbreviation.*) from Strings.resources into new
+  Strings.en.resources, so they would not carry-over to translations not requiring them.
+- MakeResources.pl calls mkdir when localized resource directory is not present.
+- UxTheme.cs: XPGroupBox: StringFormat.GenericDefault replaces GenericTypographic for drawing title string.
+- Silver icon theme:  use thick Saturn for tray (Silver.Tray.Saturn), thin Saturn glyph from older version of CXP
+  (Silver.Saturn) in PHC.
+- Config.cs, Properties.cs: accomodate IconSet and HourNumber.
+- Integrated Sandu's colored glyph icons.
+- Calendar.cs: Hour number or house of moment.
+- Calendar.RefreshForm: now calls updateBar().
+- Properties.updateRegistry: calls Core.RefreshTray(), as it used to.
+- PlanetaryHours.cs: calculate house of moment.
+- Incorporated LunarPhase.cs (lunar phase calculation algorithm); created Phases.cs (Lunar Phases form);
+  Link to view lunar phases in PHC.
+- Formatting and link changes in About.cs, new contributor credits.
+- SunTime.cs; 2-argument constructor overload which defaults 90.8333 zenith distance (official rise/set times),
+  for easy incorporation into other applications; removed long-obsolete comments.
+- Sandu's Multi.Venus.ico was originally bright yellow - making it nearly invisible with SystemColors.ControlLightLight as
+  a background; changed to orange.
+- A few months ago I modified the Config.Run stuff and apparantly now, upon new installation, ChronosXP was prompting the
+  user to configure the first *two* times the program was run instead of the first; fixed.
+- Place.cs is quite old and I didn't really know what I was doing when I wrote it.  Cleaned it up a little, but a complete
+  rewrite would be ideal.
+- MakeResources.pl now fails with error message if al.exe does not exist.
+- Setup project migrated to Inno Setup v5.0.7; all that was needed was changing InstShellExec to ShellExec (with some new
+  arguments); also changed the bitmap used.
+- Reorganized About form.
+- Spanish corrections contributed by Fernando Gómez, who is our new Spanish translator.
+- Moved from QPL to GPL (GNU General Public License).  Info as to why in AssemblyInfo.cs.  Updated License.rtf, Read Me.rtf.
+- Registry: new "Caption" key with options of HouseOfMoment, HourNumber or LunarPhase.
+- Honored by Calendar.cs StatusBar and Core.cs NotifyIcon ToolTip.
+- Context Menu: Lunar Phases form.
+
+Version 3.2 (11-28-2004)
+- Auto-upgrade system now using ShowDialog as opposed to Application.Run.  The Application.Run message did not
+  always spawn the web browser as it should have.  Also, IExplore is explicitly called for upgrades.
+- Config.Exclude elimnated.
+- UseZoneInfo is now always set to false; Apparantly only worked for USA time zones.
+- DateTime.Now/DateTime.UtcNow recorded in ErrorReport.
+
+Version 3.1 (11-17-2004)
+- Fixed a huge bug in Locality.cs!  Forgot to call Config.AddPlace before Calendar.SetLocality!!  How long has this
+  bug been present?  Probably at least a few months.
+- FrameBorderStyle changed from Fixed3D to FixedDialog in various forms (excluding calendar.)
+- Properties.cs: TabControl TabPage's order became jumbled, fixed.
+- A new Application.Idle EventHandle (see Core.cs) explicitly calls GC.Collect(), hopefully around every 6 hours (if the system is
+  idle within 6 hours).  This is because ChronosXP is designed to be running at all times, and whether or not there is free memory
+  I want to free up unneeded resources.  If this doesn't make sense, read about Garbage Collection in .NET.
+
+Version 3.0 (10-8-2004)
+- Calendar.cs: Use GetCurrentThemeName() to determine if the silver XP visual style is in use; if so, manually set VisualCalendar
+  TitleBar colors.
+- Calendar.cs: placeMenu now displays the DefaultPlace first, followed by a separator, and then a sorted list of all known places.
+- Implemented Strings.resources HourException, like DayException, for Spanish "Hora del Sol"
+- In the switch to SharpDevelop, the VisualMonthCalendar Font somehow reverted to Microsoft Sans Serif.  Corrected (to Tahoma.)
+
+2C Beta 7 (10-4-2004)
+- MTAThread was causing the System.Diagnostics.Process.Start(url) problem.  Reverted to STAThread.
+- Calendar.drawStatusBarPanel: cbwidth adjusted (to equal cbheight) when !VisualStylesEnabled - the old Windows 95 style
+  ComboBox button should be a perfect square, while the modern ComboBox button needs width = height - 1, because the last pixel
+  should be a shadow (which neither DrawThemeBackground() nor we draw.)
+- Properties.cs: "Run ChronosXP when Windows starts" becomes Disabled when "Run from the system tray" is unchecked.  This should
+  have been done a long time ago!
+- Change Log.txt reverse-ordered.
+- Print.cs-related Dutch resource strings added.
+
+2C Beta 6 (9-29-2004)
+- Forgot to update the InternalVersion in Beta 5.  Oops!
+
+2C Beta 5 (9-29-2004)
+- A bug in MakeResources.pl resulted in *\ChronosXP.Resources.dll being compiled with all localized resource files, making two
+  identical resource dll's.  This was due to a typo in a variable name.  Typo fixed, and MakeResources and UpdateBuild now run with
+  "use strict" to guard against similar problems in the future.
+- Adjusted Calendar.sbMouseMove, so one ComboBox button will not get "hot" when the other is pressed, and one will not stay pressed
+  when the MouseUp occurs over the other button.
+- Got a post office box; now using Dan Lowe's "If you like this software, send us a postcard" idea.  (See "Read Me.rtf" or "About" window)
+- Switching to .NET 1.1 made System.Diagnostics.Process.Start(url) not launch the urls - now padded with double-quotes, which works
+  here.
+
+2C Beta 4 (9-26-2004)
+- AssemblyInfo.cs: rather then relying on csc to increment the build version (AssemblyVersion("3.0.*")), UpdateBuild.pl
+  (a perl script) is used to increment the build number.  A new batch file called BuildEvents.bat calls both UpdateBuild.pl
+  and MakeResources.bat.
+- System.Diagnostics.Process.Start(URL) was throwing System.CompenentModel.Win32Exception on a few machines - why?  I don't know.
+  Now when this exception is caught, open the URL with IExplore.exe.
+- Kludgy MakeResources.bat replaced with more dynamic MakeResources.pl.
+- Application.EnableVisualStyles() was accidentally left in Core.cs:Main when I was doing some testing, it creates problems with
+  Print.cs:PrintPreviewDialog.  Removed.  This is a somewhat serious bug, so I'm releasing Beta 4 even though not much else has
+  changed.
+
+2C Beta 3 (9-24-2004)
+- Finally found the source of the elusive Dutch Time Zone bug (which has never really been fixed, errors are just ignored.)  Found this out on a
+  Thai Windows 2000 installation.  Zone Information is stored in the local time zone, while .NETfx returns an English name.  Now switching behavior
+  for non-en Windows installations to that of pre-Win2K.
+- Moved projected to SharpDevelop, which I intended to do long ago - I was finally able to do it by compiling localized resources manually
+  (see MakeResources.bat)
+- NotifyWindow.cs: Added OnMouseLeave override, this is because occasionally the mouse cursor would leave the area quickly and OnMouseMove
+  wouldn't catch it.
+- Now that Date.cs has been replaces, the DateTimePicker's minimum date of 1/1/1753 must be used - and is now the date that is checked.
+- Setup project now kills any open ChronosXP processes asynchronously at the beginning of the program.  To check if the .NET Framework
+  is installed, instead of checking the registry (which only verifies that .NET is installed but not the version), we check for the
+  existence of %windir%\Microsoft.NET\Framework\v1.1.4322\System.dll.
+- The next version will be 3.0, not Release 2C; see AssemblyInfo.cs for information why.  Source changed to accomodate more traditional
+  major.minor versions.  Since two "2C Beta" versions have already been released, this round of betas will continue to be called 2C beta.
+- Switching locality in the Planetary Hours Calendar is now simplified by the addition of a ComboBox button (in the PHC form) which pops
+  up a ContextMenu where the location can be chosen quickly.
+- Apparantly .NETfx v1.0 had a problem with garbage collection that is fixed in 1.1; GC.Collect() actually works, and when called brings
+  the mem usage down to 4K, but sucks up too many resources so it isn't explicitly called anymore.
+- All of the default locations use DST times (since the multi-place feature was adding at the beginning of this summer); now its almost
+  October and DST will soon end.  Easy time-zone switching added with another ComboBox button (similar to location)
+- Static non-Windows time zone list stored in Config.cs, used by Locality.cs.
+- Places Editor has a reference to ChronosXP, utilizes this time zone list.
+- Various Spanish language corrections;  Implemented "DayException.Planet" resource string for Spanish "Dia del Sol" (Day
+  of the Sun) vs. "Dia de ____" (other planets)
+
+2C Beta 2 (9-13-2004)
+- Print.cs: try/catch in printing.
+- Print.cs: In printing, "when" (i.e., the default date when the form was opened) was used in place of the selected start date.  Fixed.
+- PrintPreview title qualified, no longer TopMost or Maximized.
+- No longer manually drawing the NotifyIcon's ContextMenu;  as such ChronosXPCore is again inherited from Control (for WndProc) instead of Form.
+- NotifyWindow.cs: realHeight incremented by the bottom border height, this makes the text/glyph centering look better.
+- NotifyWindow.cs: saveTime re-implemented.
+- NotifyWindow.cs: Open/close animations speeded up slightly (Height adjusted by 2 pixels instead of 1, but tick is now 9ms as opposed to 6ms)
+- Date.cs eliminated (as well as VisualMonthCalendar.TitleBarClick); now when the VisualMonthCalendar title bar is clicked, a DateTimePicker is
+  displayed.
+- Print.cs: Date-range printing added, selectable location.
+- Print.cs: Check for installed printer.
+- Application.CurrentCulture.DateTimeFormat considered in VisualMonthCalendar.
+
+2C Beta 1 (9-8-2004)
+- Controls.cs still directly called OnPaintBackground() in various places instead of Invalidate().  Fixed.
+- Calendar.cs:VisualMonthCalendar, title bar is now vertical gradient.
+- Increased height of fx\Sun.gif and fx\Mars.gif, giving a more equal-sided-length NotifyWindow for the related hours.
+- Calendar.cs: Planetary hours are printed with StringFormat.GenericDefault (instead of GenericTypographic); slight formatting
+  change;  black glyphs are now printed.
+- Added Spanish translation, thanks to Liliana _____.
+- String resource LuminaryPrefix had to be split into LuminaryPrefix.Sun/Moon, to accomodate Spanish translation.
+- Uncommented long-unused "landscape" code; PageSetupDialog used in favor or PrintDialog.
+- Implemented printing idea from Sheila Burke; users can choose to print a "memo" section where notes can be written for each planetary hour.
+- New /photogenic and /currentculture arguments, to aid in making screen-shots of ChronosXP for the web page.
+- NotifyWindow borders given consistent size.
+- /iconset argument added to allow the user to explicitly choose the icon set.
+- Added PlanetaryHours.ToString() method, for use in ErrorReport.  Old ErrorReport style eliminated; Exception required.  ErrorReport
+  reports Thread*CurrentCulture and Thread*CurrentUICulture.
+- Config.Startup now uses Config.Path instead of Application.ExecutablePath - this is because DEBUG versions were setting Config.Path to the
+  path to the DEBUG binary.
+- Spanish and Dutch Inno setup translations added;  Default.isl converted to English.isl and modified slightly; see Setup\{Dutch,Spanish,English}.isl
+- Now the user selects the language at the onset of the installation;  their language selection is carried over to the default preference for ChronosXP.
+- License updated to reflect that the license is governed by the laws of the state of Nevada (as well as the USA);  the Clark County court replaces
+  the Las Vegas court for dispute resolution - I don't think there is an actual Las Vegas City Court - "Oslo" was simply replaced with "Las Vegas" when
+  this license was first used in ChronosXP.
+- UxTheme.cs: XPCheckBox MouseMove/MouseLeave Hot/Pressed behavior changed to be consistent with comctl32.dll v6 CheckBox behavior.
+- Based on a suggestion from a user, and my own desire to include Page Setup/Print Preview somewhere, a custom printing form has been added
+  in Print.cs.  This includes the ability to print the planetary hours for multiple days at once.
+
+Release 2B (8-9-2004)
+- When moving to Inno setup, I forgot to include nl\ChronosXP.resources.dll in the installation.  This was the true source of
+  the problem with Windows 98 not displaying Dutch strings.  (It was also true of XP, but I didn't realize it.)  Oops!~  Fixed!
+
+2B Beta 1 (8-6-2004)
+- Improved planetary hour calculation on days when sun sets after period of perpetual light.
+- Bug fix in NotifyWindow mouse handler.
+- None of the System.Windows.Forms.Label's in Locality.cs were ever converted to ChronosXP.XPLabel.  Fixed.
+- NotifyWindow draws the close button itself, using DrawThemeBackground() (when visual styles are enabled,) or ControlPaint.DrawCaptionButton.
+- NotifyWindow now draws borders itself.
+- NotifyWindow: registers an EventHandler with Application.ApplicationExit to make sure Windows hooks are Unhooked.
+- Core.appExit now calls UnregisterHotKey().
+- Core.trayIcon is now explicitly updated every minute in a new timer, aside from that which checks for planetary hour changes.  There
+  are two reasons for this:  When the user is switched and resumed with Fast User Switching (XP/2003) and returned, the icon for some
+  reason is distorted - this fixes it.  It also protects from the icon being hidden in the "Inactive Icons" area.
+- All RadioButton's FlatStyle is set back to Standard if visual styles aren't enabled.
+- XPCheckBox now uses ForeColor in drawing text instead of assuming ControlText, and uses GrayText if !Enabled.
+- Support for old Windows versions added; this meant basically ignoring all system timezone code, and using a Run key under
+  HKLM instead of HKCU.  Who would've thought it'd be so simple?
+- NotifyWindow:  Instead of using a timer and clock states, we now use threads for the open and close animations.  This is because on various
+  systems (especially old Windows,) the animation was occasionally too slow or too fast.
+- Properties BackColor now = Control, for old Windows versions.
+- NotifyWindow: Sticky time limit removed.
+- Black icon set added.  Properties form updated.  Precision tab becomes "Other"
+- Error reporting system added.
+- Using Inno Setup for the setup project now; because of this, ChronosXPinstaller.dll removed, replaced by new "KillProc" utility.
+- Time Zone initialization is now done before setting CurrentUICulture.  This may fix the Dutch Time Zone problem.
+
+Release 2A (7-25-2004)
+- For the ContextMenu, using both the tmpForm trick and ChronosXPCore as Control were messy.  The solution?  ChronosXPCore is now
+  inherited from Form.
+- If NotifyWindow fails for some reason, notify user with a balloon window.
+
+Beta 2.22 (7-24-2004)
+- Since NotifyWindow is a Form, it is displayed when the user presses Alt+Tab; therefore, we set NotifyWindow.Icon and NotifyWindow.Text.
+- NotifyWindow: displaying 10 seconds after activity reduced to 5 seconds.
+- Improved accuracy of night hours; the hour length is now calculated as (tomorrowsunrise - sunset) / 12 (instead of (todaysunrise - sunset) /12).
+- NotifyWindow MouseEventHandler's previously returned if clockState != ClockStates.Showing, its now ClockStates.Showing || ClockStates.CloseReady
+- Underlined font on NotifyWindow text hover.
+- Core.appExit now checks to see if a NotifyWindow is open and if so Close'es it (for UnhookWindowsHookEx())
+- NotifyWindow: ControlStyles.UserMouse set to true; all mouse processing moved to mouseHookProc.
+- Added fx:CloseHot.bmp, implemented support in NotifyWindow.
+- NotifyWindow: TextColor is Gray when text is pressed;  Window will not close while mouse cursor is over it (except due to text or close button click.)
+- No longer explicitly closing Image Stream's, apparantly this is leading to occasional crashing on some systems.
+
+Beta 2.21 (7-23-2004)
+- Windows Explorer and IE both use F11, so we now trap Alt+F11 with RegisterHotkey (instead of SetWindowsHookEx)
+- Because of this, ChronosXPCore is now inherited from System.Windows.Forms.Control, because WndProc was needed to for WM_HOTKEY.
+- Since ChronosXPCore is now a Control, ChronosXPCore.tmpForm eliminated (context menu displayed using `this')
+- SW_SHOWNA isn't always displaying NotifyWindow's on top, but a new solution has been found.  SetWindowPos() with HWND_TOPMOST and
+  SWP_NOACTIVATE.
+
+Beta 2.20 (7-22-2004)
+- Calendar.updateLabels centering algorithm adjusted.
+- StringFormat.GenericTypographic employed in Calendar.printDocument_PrintPage and Calendar.updateLabels.
+- If BETA, display version in the Planetary Hours Calendar; related strings added to Strings*.resx
+- Config.LaunchBrowser catch launch of IE eliminated - it resulted in two separate browser windows being opened for Firefox users (one Firefox, one IE)
+- Calendar.labelCTime replaced by statusBarTime.
+- Calendar.drawStatusBarPanel now uses a MeasureString overload that uses Width and StringFormat arguments.
+- Calendar.cs: most of the LinkLabel's were using the Click EventHandler instead of the LinkClicked LinkLabelLinkClickedEventHandler - fixed.
+- Core.CheckUpdates: check always if !conf.RunFromTray (i.e., standalone mode)
+- Various improvements in Core.NotifyWindow.
+- Microsoft Sans Serif dropped in favor of Tahoma.
+- VisualCalendar.CalendarFont created.
+- Better way of dealing with locations at high latitudes which are in perpetual light or darkness at various times of the year; when this is the case, divide
+  the day into 24 equal hours beginning at midnight.
+- Locality.cs: Alaska and Hawaii-Aleutian Time Zones corrected.
+- Calendar.trayContextMenu: we now do our own painting, making the ContextMenu resemble VS 2005's MenuStrip.
+- The Places Editor and Locality forms both now check to see if the stored time zone of a place is in the ComboBox.Items; if not, add it.
+- Improved accuracy of time zone string->double conversion format in Place.cs.
+- When the user makes configuration changes in the Properties form, and the Calendar form is open, the Calendar form will refresh itself to make
+  use of the changes.  See Calendar.RefreshForm.  conf.UseGradient changes are not considered.
+- PlanetaryHours, SunTime and Place are now inherited from System.IDisposable;  better memory management techniques employed throughout.
+- Win32.cs superceded by PInvoke.cs, which is now home to all of our P/Invoke stuff.
+- After two months of failed attempts I finally authored an XP style GroupBox (using UxTheme.dll) with transparancy.  Yippie.
+- Implemented XPTabControl which draws the XP Visual TabPage background (when applicable.)
+- Also implemented new controls:  XPLabel, XPLinkLabel, XPPanel.  Each simply overrides OnPaintBackground and calls
+  DrawThemeParentBackground when BackColor == Color.Transparent.  This is necessary for use with XPTabControl.
+- XPCheckBox, which draws the entire control itself (if using visual styles,) because overriding OnPaintBackground didn't work.
+- An XPNumericUpDown, but read the comments at the beginning of this code if you are going to use it.
+- All XP* controls in UxTheme.cs;  P/Invoke declarations in PInvoke.cs.
+- VisualMonthCalendar now uses Invalidate instead of directly calling OnPaintBackground.
+- New 16x16 Saturn icon.
+- Date.cs now checks to see if dates entered are valid (for example, February 31st is not)
+- Locality.cs and Date.cs: gradient backgrounds.
+- Replacement for John O'Byrne's TaskbarNotifier: NotifyWindow.  See NotifyWindow.cs.  Balloon-window notification removed, since
+  NotifyWindow has similar semantics to balloon windows (while there is no user activity, it will continue to show for around 20 minutes or until
+  there is mouse/keyboard activity.)  This implementation also will display on top without stealing focus.
+- Properties.tabPageDisplay superceded by tabPageNotify.  Ability for user to choose Font for NotifyWindow and individual background colors
+  used for different hours exist in the new NotifyWindow class, user configuration for this is located in this TabPage.
+- Organized much code in some of the larger code files into #region's.
+- Core.cs: keyboard hook; when F11 is pressed, open the Planetary Hours Calendar
+- Core.draw*MenuItem modified to support F11.  When a string contains, for example "Open|F11" it'll print "Open" normally and "F11"
+  right-justified.
+
+Release 2 (7-5-2004)
+- Multiple command-line arguments are now supported.
+- In standalone mode, ChronosXP needs to be restarted after changes are made in the Properties form.  The MessageBox notifiying the user of this is
+  now MessageBoxButtons.YesNo instead of OK.
+- Added ability to print the current planetary day and it's hour calendar; see Calendar.printDocument_PrintPage
+- Apparantly our new way of launching URLs does not work on all systems; when it fails, call IExplore directly.
+- Calendar.updateLabels now sizes the PictureBox and centers the graphics/text in both width and height.  Images cropped to their minimum required
+  size.  Calendar "Day of..." font changed.
+- Date form Location now explicitly set to Cursor.Position.
+- Reformatted the About form.
+- Fixed bug in the GMT->LT conversion process of the new SunTime algorithm that returned correct times but incorrect dates.
+- Minor redesign of the Planetary Hours Calendar - labelCtime is now on visualPanelRight, version and copyright information removed.
+- Installer class now has a BeforeUninstallEventHandler which kills open ChronosXP processes and deletes the startup registry value.
+ 
+Beta 2.12 (7-1-2004)
+- Did a last minute change of various control names for consistancy.  Some older controls still had names like "comboBox1" and "linkLabel3,"
+  which were given names such as "comboBoxZones" and "linkLabelAtlas."
+- Went through and brushed up some of the comments in the source, tried to give a description of what is going on in each file.
+- Made a few graphical touch-ups in the Planetary Hours Calendar.
+- Changed Calendar.visualCalendar colors; added VisualMonthCalendar.UseBaseGradient option.
+- While VisualMonthCalendar's ">" (month forward) button did a DateTime.AddMonths (1), there is no DateTime.SubtractMonths so the "<" button
+  subtracted a TimeSpan of 28 days.  Now we keep track of the number of days in the last month (since we come across this info anyway in
+  VisualMonthCalendar.drawCalendar) and we subtract a TimeSpan of the last month's DateTime's day (unless the number is < the current date,
+  in which we simply move to the last day of last month)
+- When in standalone mode, ChronosXP is automatically restarted after ther user makes any changes via the Properties form.
+- PlanetaryHours.GotFocus now calls an EventHandler which sets TopMost to true, then false immediately afterwards.  This is necessary to bring the window
+  to the front when it is hidden behind another, and the user double-clicks the tray icon (whose EventHandler calls Calendar.Focus)
+- Adjusted the bounds of the rectangle in which text is displayed with the TaskbarNotifier; more conservative method of determining whether to decrease
+  the font size.
+
+Beta 2.11 (6-29-2004)
+- We now use the popular US Naval Observatory algorithm for computing sunrise and sunset times, which is more accurate.
+- Users can now explicitly set the Sun's distance from the zenith used in calculating rising/setting times (for example, to use Civil Twilight) - see the
+  included file Sunrise.rtf for details.
+- Added a new "Date" form which is called when a user clicks on the VisualMonthCalendar's title bar - it allows them to manually select the date, making it
+  easier to select a date in a different month or year.
+- System.Drawing.Drawing2D.Blend support added to VisualPanel and VisualMonthCalendar.  Made use of the Blend support at
+  Calendar.visualPanelLeft.Blend and Calendar.visualCalendar.TitleBarBlend.
+
+Beta 2.10 (6-28-2004)
+- Created a new VisualPanel control - it's essentially a panel override that paints a gradient background.  Replaced the
+  old Calendar.OnPaintBackground override with two VisualPanel's.  They're double buffered so there is much less flicker.
+- I finally gave in and implemented my own MonthCalendar control, called VisualMonthCalendar.  The default MonthCalendar
+  is fine, but the problem is it is an ActiveX control so it's hard to do our own painting with it.
+- Some legacy PlanetaryHours code was left in which made the class occasionally unable to determine the current planetary hour.  Fixed.
+- As it turns out the HoverLinkLabel control wasn't necessary as the default LinkLabel has a LinkBehavior.HoverUnderline property.
+- Removed all references to UxTheme.dll's IsThemeActive() when it occured to me that it probably eliminated compatibility with Windows 2000.
+  Now even those users with the old fashioned Windows 95 visual style have gradient backgrounds in various forms.
+- Solved the bug that required verification of integrity of planetary hours in the PlanetaryHours constructor; the sunset occasionally
+  was given for the previous day.
+- Sunrise and sunset are now calculated up to the second (instead of minute)
+- PlanetaryHours are only recalculated when the day changes; this should save some CPU time.  Because of this we now give the user a choice between
+  checking if the hour has changed every second or every minute (defaults to ever second).
+- Configuration option added to let the user choose whether or not to use gradient window backgrounds "use advanced window graphics" (default: on)
+- Configuration option added to let the user choose whether or not to display exact times or times rounded to the minute (in the Calendar form)
+  (default: rounded)
+- License.cs becomes RichTextBox.cs, and now shows either the License.rtf or Read Me.rtf.
+- New "standalone mode" added: users can run ChronosXP as a standalone program as opposed to running from the system tray.  This is achieved
+  either by selecting the appropriate option in the Properties form, or passing the "/standalone" command-line argument.
+- Apparantly HKCR\HTTP\shell\open\command doesn't always contain the default browser.  Instead we're now trying to give the URL as the command
+  using System.Diagnostics.Process.Start, which is reported to work.
+
+Beta 2.9 (6-24-2004)
+- Support for the Dutch language, thanks to Remco Nannings.
+- On a broad level, multilingual support was added.  This was done to support the new Dutch translation, but should make it much easier if/when future
+  translations come about.  See Strings.resx and Strings.nl.resx.
+- Due to the new multilingual support, CurrentUICulture is explicitly set to either "en-US" or "nl-NL".  Also, there are two new command-line arguments:
+  "/english" and "/nederlands".
+- Added a custom "Upgrade available" dialog box (Update.cs) containing a checkbox allowing the user to disable automatic update checking
+  on the spot.
+- Added a new registry value, "Exclude."  When a user responds with "No" when prompted to upgrade, yet update checking is still on, it contains
+  the name of the rejected version.  Future upgrades to this version will be ignored.
+- Calendar.updateLabels now centers the heading in the right virtual panel, based on the PictureBox width and the width of the "Day of ____" text.
+- Core.NotifyHour: TaskbarNotifier font size is now determined based on the result of Graphics.MeasureString.
+- PlanetaryTime.cs was starting to become very messy.  It didn't start out great, since it was one of the first things I'd written in C#, and my UNIX C
+  roots were apparant.  Further, the new multilingual support of the program increased the messyness (especially since the related resources all have
+  English names).  It has now been redesigned in a much cleaner (and more Windows/C#-ish) format, as PlanetaryHours.cs.  The new PlanetaryHours
+  constructor requires a Config argument.
+- Places Editor: when various registry keys hadn't been set in HKCU (i.e., the user has just installed and not yet changed the configuration)
+  Registry.GetValue would throw, corrected this with try/catch.
+- Core.currentHour is now type PlanetaryHours.Planet as opposed to string, because of the new multilingual support.
+- Overrode System.Windows.Forms.Label to create HoverLinkLabel (XP Explorer-style links,) see the very end of Calendar.cs.
+
+Beta 2.8 (6-21-2004)
+* This entire beta version mainly revolved around increasing user-friendliness and simplifying things.  The program was starting to become
+  over-complicated.  If you have an 11th house Virgo stellium that is fine.  :-)  But most people don't so an effort was made to keep the program
+  feature-rich but at the same time managable by the novice computer user.
+- tabPage background colors in the Properties form are set based on whether or not a visual style is in use.
+- Redesign of the Planetary Hours Calendar; focus on user-friendliness and cleanness.  Take a look at Calendar.OnPaintBackground and
+  Calendar.drawStatusBarPanel.  Our OnPaintBackground override here divides the form into 2 regions (3 if you count the statusbar.)  The
+  left side is a user-input region, the right side is a data region.
+- Various OnPaintBackground overrides with LinearGradientBrush work
+- Calendar.drawStatusBarPanel: drawing our own StatusBarPanels
+- Previously the Windows Installer added two registry values, namely under the "Run" key (for automatically starting ChronosXP) and a
+  probably-meaningless EnableBalloonWindowSupport value.  Whenever a user deselected the "auto-start ChronosXP" option, the next
+  time they started the program, Windows installer would re-set the registry value.  To get around this, the registry value is now initially set
+  by ChronosXPInstaller.
+
+Beta 2.7 (6-19-2004)
+- Implemented use of threads for beta expiry notification and "ChronosXP is running in the background" balloon.
+- In PlanetaryTime.FormatPlanet, "the" is now lowercase.
+- In Core.ShowBalloon, we now use the NIIS_NOSOUND flag, since the user optionally can select a sound that will be
+  played at this time via PInvoke.PlaySound.
+- New command-line argument "/properties", opens the Properties form upon entry.  This is for times when the user
+  changes the time zone, and a restart is necessary, but they pressed "Apply" vs. "OK"
+- The software/name version string in the Calendar form is now a linklabel, which opens the ChronosXP home page.
+- Eliminated regCheck and registry checking in the Config constructor, in favor of try/catch.
+- ChronosXP now has the option of checking for upgrades, see Config.Config, Core.threadCheckUpdate, and various
+  parts of Properties.cs.
+- Organized registry keys and values into const strings in Config.cs.
+- Renamed button control variables in various forms, for example "button1" -> "OK"
+- Due to *.manifest files, now using XP visual styles when they are configured.
+
+Beta 2.6 (6-16-2004)
+- Optimized the sunrise/sunset calculation routine in SunTime.SunTime, added a Place argument and removed the two
+  doubles for longitude and latitude.
+- SunTime.SunTime now calculates the correct DayLength.
+- Place.LocalTime now converts GMT time into local time, as opposed to converting GMT to the system-configured
+  timezone.
+- PlanetaryTime.PlanetaryTime now takes a Place argument instead of two doubles for longitude and latitude.
+- Massive changes in Calendar.cs; Calendar.InitView eliminated and its functionality merged with updateView in a
+  much cleaner way.  updateView checks for recursion to prevent never-ending loops.
+- Fixed the "Australia bug," due to changes in SunTime.cs and Calendar.cs.

@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Abbreviation.1" xml:space="preserve">
+    <value>1η</value>
+  </data>
+  <data name="Abbreviation.10" xml:space="preserve">
+    <value>10η</value>
+  </data>
+  <data name="Abbreviation.11" xml:space="preserve">
+    <value>11η</value>
+  </data>
+  <data name="Abbreviation.12" xml:space="preserve">
+    <value>12η</value>
+  </data>
+  <data name="Abbreviation.2" xml:space="preserve">
+    <value>2η</value>
+  </data>
+  <data name="Abbreviation.3" xml:space="preserve">
+    <value>3η</value>
+  </data>
+  <data name="Abbreviation.4" xml:space="preserve">
+    <value>4η</value>
+  </data>
+  <data name="Abbreviation.5" xml:space="preserve">
+    <value>5η</value>
+  </data>
+  <data name="Abbreviation.6" xml:space="preserve">
+    <value>6η</value>
+  </data>
+  <data name="Abbreviation.7" xml:space="preserve">
+    <value>7η</value>
+  </data>
+  <data name="Abbreviation.8" xml:space="preserve">
+    <value>8η</value>
+  </data>
+  <data name="Abbreviation.9" xml:space="preserve">
+    <value>9η</value>
+  </data>
+  <data name="Button.Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="Button.OK" xml:space="preserve">
+    <value>ΟΚ</value>
+  </data>
+  <data name="Calendar.DayHours" xml:space="preserve">
+    <value>Ώρες Ημέρας</value>
+  </data>
+  <data name="Calendar.EveningTwilight" xml:space="preserve">
+    <value>Η νύχτα ξεκινά στις {1} ({0}°)</value>
+  </data>
+  <data name="Calendar.Exit" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
+  <data name="Calendar.HouseOfMoment" xml:space="preserve">
+    <value>Ήλιος στον {0} οίκο</value>
+  </data>
+  <data name="Calendar.labelSunrise" xml:space="preserve">
+    <value>Η ημέρα ξεκινά στις {0}</value>
+  </data>
+  <data name="Calendar.labelSunset" xml:space="preserve">
+    <value>Η νύχτα ξεκινά στις {0}</value>
+  </data>
+  <data name="Calendar.MCToolTip" xml:space="preserve">
+    <value>Επιλέξτε τη μέρα για την οποία θέλετε να δείτε τις πλανητικές ώρες</value>
+  </data>
+  <data name="Calendar.MorningTwilight" xml:space="preserve">
+    <value>Η ημέρα ξεκινά στις {1} ({0}°)</value>
+  </data>
+  <data name="Calendar.NightHours" xml:space="preserve">
+    <value>Ώρες Νύχτας</value>
+  </data>
+  <data name="Calendar.Preview" xml:space="preserve">
+    <value>Προεπισκόπηση</value>
+  </data>
+  <data name="Calendar.Title" xml:space="preserve">
+    <value>Ημερολόγιο Πλανητικών Ωρών - {0}</value>
+  </data>
+  <data name="Calendar.TitleToolTip" xml:space="preserve">
+    <value>Κάντε κλίκ εδώ για να επιλέξετε τον μήνα ή το έτος</value>
+  </data>
+  <data name="ContextMenu.About" xml:space="preserve">
+    <value>Σχετικά</value>
+  </data>
+  <data name="ContextMenu.Calendar" xml:space="preserve">
+    <value>Εμφάνιση</value>
+  </data>
+  <data name="ContextMenu.Exit" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
+  <data name="ContextMenu.HomePage" xml:space="preserve">
+    <value>Αρχική Σελίδα ChronosXP</value>
+  </data>
+  <data name="ContextMenu.License" xml:space="preserve">
+    <value>Άδεια Συμφωνίας</value>
+  </data>
+  <data name="ContextMenu.LunarPhases" xml:space="preserve">
+    <value>Φάσεις Σελήνης</value>
+  </data>
+  <data name="ContextMenu.Properties" xml:space="preserve">
+    <value>Ιδιότητες</value>
+  </data>
+  <data name="ContextMenu.ReadMe" xml:space="preserve">
+    <value>Διάβασέ Με</value>
+  </data>
+  <data name="Core.BackgroundText" xml:space="preserve">
+    <value>Κάντε διπλό κλίκ στε αυτό το εικονίδιο για να δείτε το Ημερολόγιο Πλανητικών Ωρών ή για να ρυθμίσετε τη τοποθεσία σας.</value>
+  </data>
+  <data name="Core.BackgroundTitle" xml:space="preserve">
+    <value>το ChronosXP συνεχίζει να εκτελείται!</value>
+  </data>
+  <data name="Core.BetaExpiredBalloonText" xml:space="preserve">
+    <value>Παρακαλώ πηγαίντε στη σελίδα http://chronosxp.sourceforge.net για να κατεβάσετε τη τελευταία έκδοση.</value>
+  </data>
+  <data name="Core.BetaExpiredBalloonTitle" xml:space="preserve">
+    <value>Η beta έκδοση του ChronosXP έχει λήξει.</value>
+  </data>
+  <data name="Core.BetaExpiredWebPage" xml:space="preserve">
+    <value>Η beta έκδοση του ChronosXP έχει λήξει. Θέλετε να πάτε στη σελίδα του ChronosXP για να κατεβάσετε τη τελευταία έκδοση;</value>
+  </data>
+  <data name="Core.InvalidArgument" xml:space="preserve">
+    <value>Λάθος όρισμα γραμμής εντολών</value>
+  </data>
+  <data name="Core.NoConfigText" xml:space="preserve">
+    <value>Μπορείτε να ρυθμίσετε το γεωγραφικό μήκος και πλάτος οποιαδήποτε στιγμή θελήσετε, επιλέγοντας τις ρυθμίσεις
+στο παράθυρο του ημερολογίου ή επιλέγοντας Ιδιότητες από το μενού του ChronosXP στη γραμμή εικονιδίων.</value>
+  </data>
+  <data name="Core.NoConfigTitle" xml:space="preserve">
+    <value>Μη ορισμένο Γεωγραφικό Μήκος και Πλάτος</value>
+  </data>
+  <data name="Core.WelcomeText" xml:space="preserve">
+    <value>Φαίνεται ότι είναι η πρώτη φορά που χρησιμοποιείτε το ChronosXP ή μόλις αναβαθμίσατε το πρόγραμμα.
+Για ακριβή αποτελέσματα, χρειαζόμαστε το γεωγραφικό μήκος και πλάτος της πόλης σας.
+Θέλετε να τα ρυθμίσετε τώρα;</value>
+  </data>
+  <data name="Core.WelcomeTitle" xml:space="preserve">
+    <value>Καλως ορίσατε στο ChronosXP</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Ημέρας</value>
+  </data>
+  <data name="DayException.Jupiter" xml:space="preserve">
+    <value>Ημέρα του Δία</value>
+  </data>
+  <data name="DayException.Mars" xml:space="preserve">
+    <value>Ημέρα του Άρη</value>
+  </data>
+  <data name="DayException.Mercury" xml:space="preserve">
+    <value>Ημέρα του Ερμή</value>
+  </data>
+  <data name="DayException.Moon" xml:space="preserve">
+    <value>Ημέρα της Σελήνης</value>
+  </data>
+  <data name="DayException.Saturn" xml:space="preserve">
+    <value>Ημέρα του Κρόνου</value>
+  </data>
+  <data name="DayException.Sun" xml:space="preserve">
+    <value>Ημέρα του Ήλιου</value>
+  </data>
+  <data name="DayException.Venus" xml:space="preserve">
+    <value>Ημέρα της Αφροδίτης</value>
+  </data>
+  <data name="DayOf" xml:space="preserve">
+    <value>Ημέρα {0}</value>
+  </data>
+  <data name="HourException.Jupiter" xml:space="preserve">
+    <value>Ώρα του Δία</value>
+  </data>
+  <data name="HourException.Mars" xml:space="preserve">
+    <value>Ώρα του Άρη</value>
+  </data>
+  <data name="HourException.Mercury" xml:space="preserve">
+    <value>Ώρα του Ερμή</value>
+  </data>
+  <data name="HourException.Moon" xml:space="preserve">
+    <value>Ώρα της Σελήνης</value>
+  </data>
+  <data name="HourException.Saturn" xml:space="preserve">
+    <value>Ώρα του Κρόνου</value>
+  </data>
+  <data name="HourException.Sun" xml:space="preserve">
+    <value>Ώρα του Ήλιου</value>
+  </data>
+  <data name="HourException.Venus" xml:space="preserve">
+    <value>Ώρα της Αφροδίτης</value>
+  </data>
+  <data name="HourOf" xml:space="preserve">
+    <value>Ώρα {0}</value>
+  </data>
+  <data name="License.Title" xml:space="preserve">
+    <value>Άδεια Συμφωνίας - ChronosXP</value>
+  </data>
+  <data name="Locality.SelectZone" xml:space="preserve">
+    <value>Παρακαλώ διαλέξτε μια χρονική ζώνη από τη λίστα</value>
+  </data>
+  <data name="LunarPhase.FirstQuarter" xml:space="preserve">
+    <value>Πρώτο Τέταρτο</value>
+  </data>
+  <data name="LunarPhase.Full" xml:space="preserve">
+    <value>Πανσέληνος</value>
+  </data>
+  <data name="LunarPhase.LastQuarter" xml:space="preserve">
+    <value>Τελευταίο Τέταρτο</value>
+  </data>
+  <data name="LunarPhase.New" xml:space="preserve">
+    <value>Νέα Σελήνη</value>
+  </data>
+  <data name="LunarPhase.WaningCrescent" xml:space="preserve">
+    <value>Φθίνων Μηνίσκος</value>
+  </data>
+  <data name="LunarPhase.WaningGibbous" xml:space="preserve">
+    <value>Φθίνων Αμφίκυρτος</value>
+  </data>
+  <data name="LunarPhase.WaxingCrescent" xml:space="preserve">
+    <value>Αύξων Μηνίσκος</value>
+  </data>
+  <data name="LunarPhase.WaxingGibbous" xml:space="preserve">
+    <value>Αύξων Αμφίκυρτος</value>
+  </data>
+  <data name="NHourOfDayNight" xml:space="preserve">
+    <value>{0} Ώρα της {1}</value>
+  </data>
+  <data name="Night" xml:space="preserve">
+    <value>Νύχτας</value>
+  </data>
+  <data name="Planet.Jupiter" xml:space="preserve">
+    <value>Δίας</value>
+  </data>
+  <data name="Planet.Mars" xml:space="preserve">
+    <value>Άρης</value>
+  </data>
+  <data name="Planet.Mercury" xml:space="preserve">
+    <value>Ερμής</value>
+  </data>
+  <data name="Planet.Moon" xml:space="preserve">
+    <value>Σελήνη</value>
+  </data>
+  <data name="Planet.Saturn" xml:space="preserve">
+    <value>Κρόνος</value>
+  </data>
+  <data name="Planet.Sun" xml:space="preserve">
+    <value>Ήλιος</value>
+  </data>
+  <data name="Planet.Venus" xml:space="preserve">
+    <value>Αφροδίτη</value>
+  </data>
+  <data name="PlanetaryHours" xml:space="preserve">
+    <value>Ημερολόγιο Πλανητικών</value>
+  </data>
+  <data name="Print.PageOf" xml:space="preserve">
+    <value>Σελίδα {0} από {1}</value>
+  </data>
+  <data name="Print.PrintPreview" xml:space="preserve">
+    <value>Προεπισκόπηση Εκτύπωσης - ChronosXP</value>
+  </data>
+  <data name="Properties.Example" xml:space="preserve">
+    <value>Παράδειγμα</value>
+  </data>
+  <data name="Properties.NoZoneInfo" xml:space="preserve">
+    <value>* Χρησιμοποιήστε τον Πίνακα ελέγχου για να αλλάξετε αυτή τη ρύθμιση</value>
+  </data>
+  <data name="Properties.OnlyWaveText" xml:space="preserve">
+    <value>Μόνο αρχεία ήχου (*.wav) επιτρέπονται</value>
+  </data>
+  <data name="Properties.OnlyWaveTitle" xml:space="preserve">
+    <value>Λάθος τύπος αρχείου</value>
+  </data>
+  <data name="Properties.SAChanges" xml:space="preserve">
+    <value>Το ChronosXP χρειάζεται επανεκκίνηση για να λειτουργήσουν οι αλλαγές που κάνατε. Πατήστε ΟΚ για επανεκκίνηση.</value>
+  </data>
+  <data name="Properties.Standalone" xml:space="preserve">
+    <value>Το ChronosXP χρειάζεται επανεκκίνηση για να λειτουργήσει αυτόνομα. Πατήστε ΟΚ για επανεκκίνηση.</value>
+  </data>
+  <data name="Properties.Tray" xml:space="preserve">
+    <value>Το ChronosXP χρειάζεται επανεκκίνηση για να λειτουργήσει στη γραμμή εικονιδίων. Πατήστε ΟΚ για επανεκκίνηση.</value>
+  </data>
+  <data name="Sunrise" xml:space="preserve">
+    <value>Ανατολή Ηλίου</value>
+  </data>
+  <data name="Sunset" xml:space="preserve">
+    <value>Δύση Ηλίου</value>
+  </data>
+  <data name="Upgrade.Version" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+</root>

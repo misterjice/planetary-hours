@@ -1,0 +1,12 @@
+Robert Misiak <rmisiak@users.sourceforge.net>, July 2003, developed initial program
+Remco Nannings <rethna@quicknet.nl/rethna@users.sourceforge.net>, June 2004, Dutch translation
+Lilian O. García <lilianolga@mipunto.com>, August 2004, Spanish translation
+J Sandu <jsandu@terrasat.ro>, December 2004, Multi-colored glyphs
+Gjiada <gjiada@infinito.it>, January 2005, Italian translation
+Fernando Arturo Gómez Flores <fernando.gomez@matematicas.net>, January 2005, Additional Spanish translation
+Christophe Bussien <astroguide@free.fr/cbussien@users.sourceforge.net>, January 2005, French translation
+The People of CartaNatal <cartanatal@users.sourceforge.net> (http://www.cartanatal.com), March 2005, Portuguese translation, additional Spanish translation
+
+Graphics not developed for ChronosXP, but used in the program:
+Kythera Ann/Crystal Cloud Graphics, http://graphics.elysiumgates.com, source of silver glyph graphics
+Hamburger Schule, http://hamburgerschhule.de, source of AstroFont, which was used to create black glyphs
