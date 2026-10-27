@@ -58,7 +58,7 @@ namespace ChronosXP
 		// URL's used in various parts of the program
 		public const string URL								= @"http://chronosxp.sourceforge.net";
 		public const string URLHours					= @"http://chronosxp.sourceforge.net/hours.php";
-		public const string URLAtlas					= @"http://www.astro.com/atlas";
+		public const string URLAtlas					= @"https://www.astro.com/atlas";
         public const string URLDonate = @"http://sourceforge.net/project/project_donations.php?group_id=111901";
         public const string URLFAQ = @"http://chronosxp.sourceforge.net/FAQ.html";
 		#if BETA
@@ -625,12 +625,27 @@ namespace ChronosXP
 					else
 						pStartup = true;
 					skey.Close();
+					// An older install may have left the Run entry pointing at an exe that no longer exists.
+					if (pStartup)
+						Startup = true;
 				}
 
 				loadPlaces();
+				// A default place or locality saved by an older install may no longer exist in the places list;
+				// fall back to the first known place rather than failing on a null Place.
 				pDefaultPlace = GetPlace(DPlace);
+				if (pDefaultPlace == null)
+				{
+					pDefaultPlace = Places[0];
+					pPlace = pDefaultPlace.Name;
+				}
 				pDefaultPlace.SetDefault();
 				pDefaultLocality = GetPlace(LPlace);
+				if (pDefaultLocality == null)
+				{
+					pDefaultLocality = Places[0];
+					pLPlace = pDefaultLocality.Name;
+				}
 
 				if (UseZoneInfo)
 				{
@@ -866,23 +881,26 @@ namespace ChronosXP
 		#region ChronosXP.Place related
 		private void loadPlaces()
 		{
+			// The installer's places are optional: an old HKLM key may lack them, and the user's own places
+			// under HKCU must still load either way.
 			RegistryKey dkey = openDefaultsKey();
-			string dname = dkey.Name;
 			RegistryKey nkey = dkey.OpenSubKey ("Places");
 			dkey.Close();
-			if (nkey == null)
+			if (nkey != null)
 			{
-				Core.ErrorMessage("Unable to load stored locations", new Exception("Cannot open registry key " + dname + "\\Places"), this);
-				return;
+				readPlaces (nkey);
+				nkey.Close();
 			}
-			readPlaces (nkey);
-			nkey.Close();
 
 			nkey = Registry.CurrentUser.OpenSubKey (placesKey);
 			if (nkey == null)
 				nkey = Registry.CurrentUser.CreateSubKey (placesKey);
 			readPlaces (nkey);
 			nkey.Close();
+
+			if (PlaceNum == 0)
+				for (int i = 0; i < builtinPlaces.GetLength (0); i++)
+					localAddPlace (new Place (builtinPlaces[i, 0], builtinPlaces[i, 1], builtinPlaces[i, 2], builtinPlaces[i, 3]));
 		}
 
 		/// <summary>
@@ -890,6 +908,17 @@ namespace ChronosXP
 		/// HKLM\\SOFTWARE\\Robert Misiak\\ChronosXP; when that key is absent (no installer, or a 32-bit install whose key
 		/// is redirected to WOW6432Node), the same defaults are created under HKCU so no installer or admin rights are needed.
 		/// </summary>
+		// The places the original installer shipped: name, longitude, latitude, zone.
+		private static readonly string[,] builtinPlaces = {
+			{ "Las Vegas, NV", "115W13", "36N11", "+07:00 Pacific Daylight Time - PDT" },
+			{ "Detroit, MI", "83W03", "42N20", "+04:00 Eastern Daylight Time - EDT" },
+			{ "London, England", "0W10", "51N30", "-01:00 British Summer Time - BST" },
+			{ "Tokyo, Japan", "139E46", "35N42", "-09:00 Japan Time - JST" },
+			{ "Los Angeles, CA", "118W15", "34N3", "+07:00 Pacific Daylight Time - PDT" },
+			{ "Sydney, Australia", "151E13", "33S52", "-10:00 Australian Eastern Time - AEST" },
+			{ "Athens, Greece", "23E43", "37N58", "-03:00 Eastern European Summer Time - EEST" },
+			{ "New York, NY", "74W00", "40N43", "+04:00 Eastern Daylight Time - EDT" } };
+
 		private RegistryKey openDefaultsKey()
 		{
 			RegistryKey key = Registry.LocalMachine.OpenSubKey (mainKey);
@@ -929,15 +958,7 @@ namespace ChronosXP
 				key.SetValue (landscapeVal, 0, RegistryValueKind.DWord);
 				key.SetValue (stickyVal, 1, RegistryValueKind.DWord);
 
-				string[,] places = {
-					{ "Las Vegas, NV", "115W13", "36N11", "+07:00 Pacific Daylight Time - PDT" },
-					{ "Detroit, MI", "83W03", "42N20", "+04:00 Eastern Daylight Time - EDT" },
-					{ "London, England", "0W10", "51N30", "-01:00 British Summer Time - BST" },
-					{ "Tokyo, Japan", "139E46", "35N42", "-09:00 Japan Time - JST" },
-					{ "Los Angeles, CA", "118W15", "34N3", "+07:00 Pacific Daylight Time - PDT" },
-					{ "Sydney, Australia", "151E13", "33S52", "-10:00 Australian Eastern Time - AEST" },
-					{ "Athens, Greece", "23E43", "37N58", "-03:00 Eastern European Summer Time - EEST" },
-					{ "New York, NY", "74W00", "40N43", "+04:00 Eastern Daylight Time - EDT" } };
+				string[,] places = builtinPlaces;
 				RegistryKey pkey = key.CreateSubKey ("Places");
 				for (int i = 0; i < places.GetLength (0); i++)
 				{
@@ -1766,13 +1787,14 @@ namespace ChronosXP
         // voices start to ring in your head - tell me what do they say?
 		public void LaunchBrowser (string url)
 		{
+			// Open in the user's default browser; Internet Explorer is retired on current Windows.
 			try
 			{
-                System.Diagnostics.Process.Start(@"C:\Program Files\Internet Explorer\iexplore.exe", url);
-			}
-			catch
-			{
                 System.Diagnostics.Process.Start(url);
+			}
+			catch (Exception ex)
+			{
+                Core.ErrorMessage ("Unable to open URL: " + url, ex);
                 //				MessageBox.Show("Unable to open URL: " + url + "\r\nIf you are a Firefox user, you can ignore this error, or see " +
 //				                "http://johnhaller.com/jh/mozilla/firefox_bug_246078.asp to fix this error.", "ChronosXP", MessageBoxButtons.OK,
 //				                MessageBoxIcon.Warning);

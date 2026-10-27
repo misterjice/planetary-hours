@@ -2,25 +2,61 @@ name: Build
 
 on:
   push:
+    branches: [claude/lucid-galileo-11d0id, main, master]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      APP_VERSION: 4.1.${{ github.run_number }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Build
-        run: dotnet build ChronosXP.sln -c Release
-      - name: Package
+
+      - name: Build x86 and x64
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force dist | Out-Null
-          Copy-Item ChronosXP/bin/Release/net48/* dist/ -Recurse -Exclude *.pdb
-          Compress-Archive -Path dist/* -DestinationPath ChronosXP-win.zip -Force
+          foreach ($arch in 'x86', 'x64') {
+            dotnet build ChronosXP/ChronosXP.csproj -c Release -p:PlatformTarget=$arch -o "build/$arch"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) {
+            choco install innosetup -y --no-progress
+          }
+
+      - name: Build installers and portable zips
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          New-Item -ItemType Directory -Force installer/output | Out-Null
+          foreach ($arch in 'x86', 'x64') {
+            Remove-Item "build/$arch/*.pdb" -ErrorAction SilentlyContinue
+            & $iscc "/DArch=$arch" "/DAppVersion=$env:APP_VERSION" "/DSourceDir=$PWD\build\$arch" installer\ChronosXP.iss
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+            Compress-Archive -Path "build/$arch/*" -DestinationPath "installer/output/ChronosXP-$env:APP_VERSION-$arch-portable.zip" -Force
+          }
+          Get-ChildItem installer/output
+
       - uses: actions/upload-artifact@v4
         with:
-          name: ChronosXP-win
-          path: dist/
+          name: ChronosXP-${{ env.APP_VERSION }}
+          path: installer/output/
+
+      - name: Publish release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$env:APP_VERSION" (Get-ChildItem installer/output/*).FullName `
+            --target "$env:GITHUB_SHA" --title "ChronosXP $env:APP_VERSION" --latest `
+            --notes "x86 and x64 installers for Windows 10/11, plus portable zips. Requires .NET Framework 4.8 (built into Windows 10 1903+ and Windows 11)."
