@@ -631,19 +631,21 @@ namespace ChronosXP
 				}
 
 				loadPlaces();
-				// A default place or locality saved by an older install may no longer exist in the places list;
-				// fall back to the first known place rather than failing on a null Place.
+				// A default place or locality saved by an older install may no longer exist in the places list.
+				// Fall back to the installer's defaults (or the first known place) rather than failing on a null
+				// Place, and treat it as a first run so the user is asked to set their location.
 				pDefaultPlace = GetPlace(DPlace);
 				if (pDefaultPlace == null)
 				{
-					pDefaultPlace = Places[0];
+					pDefaultPlace = GetPlace("Las Vegas, NV") ?? Places[0];
 					pPlace = pDefaultPlace.Name;
+					Run = 1;
 				}
 				pDefaultPlace.SetDefault();
 				pDefaultLocality = GetPlace(LPlace);
 				if (pDefaultLocality == null)
 				{
-					pDefaultLocality = Places[0];
+					pDefaultLocality = GetPlace("New York, NY") ?? pDefaultPlace;
 					pLPlace = pDefaultLocality.Name;
 				}
 

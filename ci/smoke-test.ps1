@@ -1,4 +1,4 @@
-# Installs a ChronosXP setup.exe silently and runs ChronosXP.exe /selftest under several registry
+﻿# Installs a ChronosXP setup.exe silently and runs ChronosXP.exe /selftest under several registry
 # scenarios. Exits non-zero if any scenario fails, hangs, or computes implausible hours.
 param(
     [Parameter(Mandatory)] [string] $Installer,
@@ -97,6 +97,9 @@ foreach ($name in $scenarios.Keys) {
             $mins = [int]$Matches[1] * 60 + [int]$Matches[2]
             if ($mins -lt 360 -or $mins -gt 480) { Write-Host "Implausible Waco sunrise"; $ok = $false }
         } else { $ok = $false }
+    }
+    if ($name -eq 'stale-default-place' -and $text -notmatch 'DefaultPlace=\{Las Vegas, NV') {
+        Write-Host "Expected fallback to Las Vegas, NV"; $ok = $false
     }
     if ($name -ne 'fresh' -and $name -ne 'stale-default-place' -and $text -notmatch 'DefaultPlace=\{Waco, TX') {
         Write-Host "Expected Waco, TX as the default place"; $ok = $false
